@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>check_out</title>
+</head>
+<body>
+    <h1>Check Out Page</h1>
+    <form >
+        <input type="text" id="name" placeholder="enter name">
+        <input type="number" id="number" placeholder="enter card number">
+        <input type="text" id="date" placeholder="enter expiry date">
+        <input type="number" id="cvv" placeholder="enter cvv">
+        <button id="btn">make payment</button>
+    </form>
+    <h1 id="msg"></h1>
+</body>
+</html>
+
+<script>
+
+    document.querySelector("form").addEventListener("submit", check);
+
+    function check(event){
+        event.preventDefault();
+
+        var name=document.querySelector("#name").value;
+        var msg = document.querySelector("#msg");
+        
+        if(name == "vaibhav"){
+            alert("click ok to proceed your order");
+            window.location.href='otp_page.html';
+        }else{
+            msg.textContent="Enter Correct Data";
+            alert("Enter Correct Data")
+        }
+    }
+</script>

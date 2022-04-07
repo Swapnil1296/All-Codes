@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDoList</title>
+    <style>
+        tr,td,th{
+            border: 1px solid green;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <input type="text" placeholder="Enter Items" id="item">
+        <input type="number" placeholder="Enter Quantity" id="quantity">
+        <input type="submit" value="Add Task">
+    </form>
+    <table>
+        <thead>
+            <tr>
+                <th>Items</th>
+                <th>Quantity</th>
+                <th>Remove</th>
+            </tr>
+        </thead>
+        <tbody>
+           
+        </tbody>
+    </table>
+</body>
+</html>
+<script>
+    document.querySelector("form").addEventListener("submit",todolist);
+        var arr=JSON.parse(localStorage.getItem("ListOfItems")) || [];
+        TableCreate(arr);
+
+        var arr=[]
+    function todolist(event){
+        event.preventDefault();
+      var item=  document.querySelector("#item").value;
+      var quantity=document.querySelector("#quantity").value;
+
+      var ToDoList={item:item, qnty:quantity};
+      arr.push(ToDoList);
+      localStorage.setItem("ListOfItems", JSON.stringify(arr));
+    //  console.log(arr)
+      TableCreate(arr);
+
+    }
+    function TableCreate(arr){
+        console.log(arr);
+        document.querySelector("tbody").innerHTML="";
+      
+        arr.map(function(elem,index){
+        var row=document.createElement("tr");
+
+        var td1=document.createElement("td");
+        td1.textContent=elem.item;
+
+        var td2=document.createElement("td");
+        td2.textContent=elem.qnty;
+
+        var td3=document.createElement("td");
+        td3.textContent="Delete";
+        td3.addEventListener("click",function(){
+            deletetask(index)
+        })
+
+        row.append(td1,td2,td3);
+        document.querySelector("tbody").append(row);
+                })
+     }
+
+     function deletetask(index){
+         console.log(index);
+        arr.splice(index,1);
+        console.log(arr);
+        localStorage.setItem("ListOfItems",JSON.stringify(arr));
+        TableCreate(arr);
+     }
+</script>

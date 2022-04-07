@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bag.html</title>
+    <script src="https://kit.fontawesome.com/a3b844b34e.js" crossorigin="anonymous"></script>
+    <style>
+        #mainbagdiv{
+            width: 90%;
+            /* height: 600px; */
+            margin: auto;
+            /* border: 1px solid red; */
+            display: flex;
+
+        }
+        #leftbagdiv{
+            width: 60%;
+            /* border: 1px solid blue; */
+        }
+        #baginput{
+            border: 0px;
+            border-bottom: 2px solid red;
+            width: 100%;
+            /* height: 60px; */
+            display: flex;
+            justify-content: space-between;
+        }
+        #baginput>button{
+            background-color: white ;
+            border: 0px;
+            font-size: large;
+          
+        }
+        #rewards{
+             border: 0.1px solid lightsteelblue;
+             width: 100%;
+             margin-top: 30px;
+            
+
+        }
+        #rewards>h1,p{
+            margin: 5px;
+        }
+       #icontag{
+            display: flex;
+            justify-content: space-around;
+        }
+       
+        /* <!-- add to cart code start  here --> */
+       
+        
+        #itemone{
+            display: flex;
+            margin-top: 10px;
+            border: 0.1px solid lightsteelblue;
+;
+        }
+        #itemone>div>img{
+            width: 240px;
+            height: 200px;
+        }
+        #iteminfo{
+            width: 400px;
+            display: flex;
+          
+            justify-content: space-between;
+        }
+        #iteminfo>h3,h4{
+            margin: 4px;
+        }
+        #cartone{
+            width: 220px;
+            display: flex;
+            margin-top: 10px;
+           
+            justify-content: space-between;
+        }
+        #demoInput{
+            padding: 0px;
+            width: 30px;
+            font-weight: bold;
+        }
+        #cartbottom{
+            width: 140px;
+            height: 20px;
+            color: gray;
+            display: flex;
+           
+            justify-content: space-between;
+          margin-left: 300px;
+           margin-top: 30px;
+        }
+        #cartbottom>h6{
+            margin: 5px;
+        }
+        #cartbottom>div{
+            height: 18px;
+            border: 1px solid gray;
+        }
+        /* order sumarry start her */
+        #ordersummary{
+            border: 0.1px solid lightsteelblue;
+            margin-left: 40px;
+            width: 350px;
+            height: 450px;
+           text-align: center;
+           margin-top: 100px;
+        }
+        #totalcount{
+            
+            width: 300px;
+            margin: auto;
+            display: flex;
+
+            justify-content: space-between;
+        }
+        #totalcount>h2{
+            margin: 5px;
+        }
+        #swapy{
+            border: 0px;
+            border-bottom: 1px solid red;
+            margin-top: 40px;
+        }
+        #swapy2{
+            padding: 15px 50px 15px 50px;
+            margin-top: 10px;
+            background-color: indianred;
+            color: white;
+            border: 0px;
+        }
+        #swapy3{
+            padding: 12px 95px 12px 95px;
+            margin-top: 10px;
+            border: 0px;
+        }
+        /* what's trending logo */
+
+       #whatstrending{
+        /* border: 1px solid red; */
+        width: 90%;
+        margin: auto;
+        text-align: center;
+        color: midnightblue;
+        margin-top: 20px;
+        font-size: x-large;
+       }
+       /* bottom images start here */
+
+       #bottomimages{
+           width: 90%;
+           /* border: 1px solid red; */
+           margin: auto;
+       }
+       #frontproductwindow{
+            width: 95%;
+            /* border: 1px solid black; */
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(7,1fr);
+            grid-gap: 15px;
+        }
+       
+        #frontproductimg{
+            width: 200px;
+            height: 200px;
+        }
+     .checked {
+        color: skyblue        }
+        #pricebar{
+            text-align: center;
+        }
+        #pricebar>h4,p,h5{
+           margin: 5px;
+        }
+        #verticalline{
+            /* border: 1px solid red; */
+            width: 2px;
+            height: 200px;
+            margin-top: 100px;
+            background-color: thistle;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div id="mainbagdiv">
+      
+      <div id="leftbagdiv" >
+        <h1>Shopping Bag </h1>
+          <div id="baginput">
+             <button>Continue to Checkout></button>
+             <button>Continue to Shopping></button>
+         </div>
+         <div id="rewards">
+             <h1 >Credo Rewards </h1>
+             <p>To earn and redeem Credo Rewards points, sign in or create account.</p>
+            <div id="icontag" >
+                <i class="fa fa-star-o" style="font-size:30px;color:black"></i>
+                
+                 <h4 style="margin:5px;margin-left: 5px;color: lightsteelblue; ">Earn upto 2 points <br> per dollar spent </h4>
+                <i class="fas fa-gift" style="font-size: 30px;color: black;"></i>
+                <h4 style="margin:5px;margin-left: 5px; color: lightsteelblue; ">Get Free point <br> on your birthday</h4>
+                <i class="far fa-user"style="font-size:30px;color:black"></i>
+                <h4 style="margin:5px;margin-left: 5px; color: lightsteelblue; ">Get access to <br> special events </h4>
+                <i class="fas fa-box"style="font-size:30px;color:black"></i>
+                <h4 style="margin:5px;margin-left: 5px; color: lightsteelblue; ">Qualify for free <br> shipping </h4>
+           </div>  
+         </div>
+          <!-- add to cart code start  here -->
+           
+          <div>
+            <h1>ITEMS IN BAG()</h1>
+            <div id="itembag1">
+                <div id="itemone">
+                    <div>
+                        <img src="https://cdn.shopify.com/s/files/1/0637/6147/products/PDP_SPRING_RESET_SET_300x.jpg?v=1642113326" alt="img">
+                       
+                    </div>
+                   
+                    <div style="margin-top: 10px;">
+                        <p>Tata Harper</p>
+                        <div id="iteminfo" >
+                            <h3>Spring Reset Kit 2.0</h3>
+                            <h4>$50.00</h4>
+                        </div>
+                       <div id="cartone">
+                        <p style="color: grey;">size: 3 piece set</p>
+                            <button id=demoInput>+</button>
+                            <input id=demoInput type=number >
+                            <button id=demoInput>-</button>
+                       </div>
+                       <div id="cartbottom">
+                           <h6>Remove</h6>
+                           <div></div>
+                           <h6>Save to Wishlist</h6>
+                       </div>    
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="itemone">
+            <div>
+                <img src="https://cdn.shopify.com/s/files/1/0637/6147/products/PDP_SPRING_RESET_SET_300x.jpg?v=1642113326" alt="img">
+               
+            </div>
+           
+            <div style="margin-top: 10px;">
+                <p>Tata Harper</p>
+                <div id="iteminfo" >
+                    <h3>Spring Reset Kit 2.0</h3>
+                    <h4>$50.00</h4>
+                </div>
+               <div id="cartone">
+                <p style="color: grey;">size: 3 piece set</p>
+                    <button id=demoInput>+</button>
+                    <input id=demoInput type=number >
+                    <button id=demoInput>-</button>
+               </div>
+               <div id="cartbottom">
+                   <h6>Remove</h6>
+                   <div></div>
+                   <h6>Save to Wishlist</h6>
+               </div>    
+            </div>
+        </div>
+    </div>
+      <!-- order summary div -->
+      <div id="ordersummary">
+        <h1>Order Summary</h1>
+        <hr>
+          <div id="totalcount">
+              <h4>Merchandise subtotal</h4>
+              <h4>$88.0</h4>
+          </div>
+          <div id="totalcount">
+              <h4>Shipping & Handling</h4>
+              <h4>TBD</h4>
+          </div>
+          <div id="totalcount">
+              <h4>Tax</h4>
+              <h4>TBD</h4>
+          </div>
+          <hr>
+          <div id="totalcount">
+              <h2>Estimated Total</h2>
+              <h2>$88.00</h2>
+          </div>
+         <div>
+            <p>or 4 interest-free installments of $22.00 <button style="background-color: lightsteelblue; border: 0px; border-radius: 20px;">
+                afterpay</button></p>
+               
+                <button id="swapy">Add a gift message ></button>
+                <br>
+                <button id="swapy2">CONTINUE TO CHECKOUT</button>
+                <br>
+                <button id="swapy3">PAY WITH<i class="fab fa-paypal"style="color: blueviolet; font-size:20px; margin-left:5px;"></i></button>
+         </div>
+    </div>
+</div>
+</div>
+<div id="whatstrending">
+ <h1>What's Trending</h1>
+</div>
+  <!-- bottom images start here -->
+
+<div id="bottomimages">
+    <div id="frontproductwindow">
+        <div>
+            <img src="https://images.ulta.com/is/image/Ulta/2589236?op_sharpen=1&resMode=bilin&qlt=85&wid=290&hei=250&fmt=jpg" alt="img">
+            <div style="background-color: thistle; text-align: center; width: 60px; height: 20px; margin: auto;">
+                <h6>New</h6>
+            </div>
+           <div id="pricebar">
+            <p>Osea</p>
+            <h4>Undaria Algae Body Butter</h4>
+            <h5>$18.00-$48.00</h5>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+           </div>
+           
+        </div>
+        <div id="verticalline"></div>
+        <div>
+            <img id="frontproductimg" src="https://cdn.shopify.com/s/files/1/0637/6147/products/Miracle-BalmpTawny1_540x.jpg?v=1641779377" alt="img">
+            <div style="background-color: thistle; text-align: center; width: 60px; height: 20px; margin: auto ">
+                <h6>New</h6>
+            </div>
+           <div id="pricebar">
+            <p>Jones Road</p>
+            <h4>Miracle Balm</h4>
+            <h5>$38.00</h5>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+           </div>
+           
+        </div>
+        <div id="verticalline"></div>
+        <div>
+            <img id="frontproductimg"src="https://cdn.shopify.com/s/files/1/0637/6147/products/face-pencil-shade1.jpg?v=1641610601" alt="img">
+            <div style="background-color: thistle; text-align: center; width: 60px; height: 20px; margin: auto ">
+                <h6>New</h6>
+            </div>
+           <div id="pricebar">
+            <p>Jones Road</p>
+            <h4>The Face Pencil</h4>
+            <h5>$25.00</h5>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star "></span>
+            <span class="fa fa-star"></span>
+           </div>
+
+        </div>
+        <div id="verticalline"></div>
+        <div>
+            <img id="frontproductimg" src="https://cdn.shopify.com/s/files/1/0637/6147/products/MF_MiniBakuchiolEcomm2000x2000_3d9016d2-b00e-4471-84a3-393f3e3fbfbc_720x.jpg?v=1638498639" alt="img">
+            <div style="background-color: thistle; text-align: center; width: 60px; height: 20px; margin: auto ">
+                <h6>New</h6>
+            </div>
+           <div id="pricebar">
+            <p>Harbivore Botanicals</p>
+            <h4>Moon Fruit Retinol Alternative Sleep <br> Mask</h4>
+            <h5>$54.00</h5>
+             <div style="align-items: center;">
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+           </div>
+             </div>
+        </div>
+    </div>
+</div>
+<br><br>
+<hr>
+        
+     
+    
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #maincontainer{
+            width: 80%;
+            height: 500px;
+          
+            margin: auto;
+            display: flex;
+        }
+        #container{
+            width: 45%;
+          
+            margin-left: 20px ;
+        }
+        #outputbody{
+            width: 45%;
+           
+            margin-left: 10px;
+        }
+        select,input,textarea{
+            margin-top: 10px;
+        }
+        tr,td, th{
+            border: 1px solid goldenrod;
+        }
+    </style>
+</head>
+<body>
+   <div id="maincontainer">
+    <div id="container">
+         <select  id="filter" onchange="filterCat()">
+             <option value="">Filter BY Catagory</option>
+             <option value="Refund">Refund</option>
+             <option value="Item Missing">Item Missing</option>
+             <option value="status">Order Status</option>
+             <option value="deliver">Delivery</option>
+             <option value="feedback">Feedback</option>
+         </select>
+        
+         <select id="Numbershort" onchange="shortTC()">
+             <option value="">Short by TC Number</option>
+             <option value="Low">Low to High</option>
+             <option value="High">High to Low</option>
+         </select>
+         <form >
+             <select  id="Category">
+                 <option value="">Select Catagory</option>
+                 <option value="Refund">Refund</option>
+                 <option value="Item Missing">Item Missing</option>
+                 <option value="status">Order Status</option>
+                 <option value="deliver">Delivery</option>
+                 <option value="feedback">Feedback</option>
+             </select>
+             <br>
+            
+             <br>
+             <input type="date" id="date" placeholder="Select Date">
+             <br>
+             <input type="number" id="tcnumber" placeholder="InputTCNumber">
+             <br>
+             <textarea placeholder="Enter Description" id="descbox" cols="30" rows="10"></textarea>
+             <input type="submit" name="submit" id="subbtn">
+         </form>
+    </div>
+    <div id="outputbody">
+        <table id="table">
+            <thead>
+                <tr>
+                    <th>Category</th>
+                    <th> Date</th>
+                    <th>Number</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+   </div>
+    
+</body>
+</html>
+<script>
+    document.querySelector("form").addEventListener("submit",Karlo);
+    var KarloArr=JSON.parse(localStorage.getItem("KarloItems")) ||[];
+    displayTable(KarloArr);
+
+    function shortTC(){
+        
+        var selected=document.getElementById("Numbershort").value;
+        // console.log(selected);
+        if(selected=="Low"){
+            KarloArr.sort(function(a,b){
+                return (a.number-b.number)
+            });
+            if(selected=="High"){
+                KarloArr.sort(function(a,b){
+                    return (b.number-a.number)
+                });
+            }
+        }
+        displayTable(KarloArr);
+      
+
+    }
+   
+
+    function filterCat(){
+        var selected=document.querySelector("#filter").value;
+        var list=KarloArr.filter(function(elem){
+            return elem.cat==selected;
+        })
+        displayTable(list);
+    }
+
+
+
+
+
+    function Karlo(event){
+        event.preventDefault();
+        var select= document.querySelector("#Category").value;
+        var date=document.querySelector("#date").value;
+        var number=document.querySelector("#tcnumber").value;
+        var des=document.querySelector("#descbox").value;
+        console.log(select,date,number,des);
+
+        var obj={
+            cat:select, date:date, number:number, des:des
+        }
+        KarloArr.push(obj);
+        console.log(KarloArr);
+        localStorage.setItem("KarloItems",JSON.stringify(KarloArr));
+        displayTable(KarloArr);
+
+        
+    }
+    function displayTable(KarloArr){
+        document.querySelector("tbody").textContent="";
+        KarloArr.map(function(elem,index){
+            var tr=document.createElement("tr");
+            var td1=document.createElement("td");
+            td1.textContent=elem.cat;
+            var td2=document.createElement("td");
+            td2.textContent=elem.date;
+            var td3=document.createElement("td");
+            td3.textContent=elem.number;
+            var td4=document.createElement("td");
+            td4.textContent=elem.des;
+            tr.append(td1,td2,td3,td4);
+            document.querySelector("tbody").append(tr);
+        })
+    }
+</script>

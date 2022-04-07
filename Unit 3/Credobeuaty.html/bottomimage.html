@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #bottomimages{
+           width: 90%;
+           border: 1px solid red;
+           margin: auto;
+       }
+       #frontproductwindow{
+            width: 95%;
+            border: 1px solid black;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(7,1fr);
+            grid-gap: 15px;
+        }
+       
+        #frontproductimg{
+            width: 200px;
+            height: 200px;
+        }
+     .checked {
+        color: skyblue        }
+        #pricebar{
+            text-align: center;
+        }
+        #pricebar>h4,p,h5{
+           margin: 5px;
+        }
+        #verticalline{
+            /* border: 1px solid red; */
+            width: 2px;
+            height: 200px;
+            margin-top: 100px;
+            background-color: thistle;
+        }
+
+        #hovereffect2{
+            width: 200px;
+            height: 200px;
+            position: relative;
+            cursor: pointer;
+            display: inline-block;
+            border: 1px solid red;
+            
+
+        }
+        #hovereffect2 #imagetop2{
+           
+            display: none;
+            position: absolute;
+            z-index: 99;
+            top: 0%;
+            left: 0%;
+           
+        }
+        #hovereffect2:hover #imagetop2{
+            display: inline;      
+        }
+
+    </style>
+</head>
+<body>
+    <div id="bottomimages">
+        <div id="frontproductwindow">
+            <div >
+                <div id=" hovereffect2">
+                <img id="frontproductimg"src="https://images.ulta.com/is/image/Ulta/2589236?op_sharpen=1&resMode=bilin&qlt=85&wid=290&hei=250&fmt=jpg" alt="img">
+                <img id="imagetop2" src="https://cdn.shopify.com/s/files/1/0637/6147/products/20211029_EDITORIAL_BEAUTY_GOOP-GLOW-CLOUDBERRY_SHOT-02_00662_320x.jpg?v=1642217234" alt="img">
+            </div>
+                <div style="background-color: thistle; text-align: center; width: 60px; height: 20px; margin: auto;">
+                    <h6>New</h6>
+                </div>
+               <div id="pricebar">
+                <p>Osea</p>
+                <h4>Undaria Algae Body Butter</h4>
+                <h5>$18.00-$48.00</h5>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+               </div>
+               
+            </div>
+            <div id="verticalline"></div>
+            <div>
+                <img id="frontproductimg" src="https://cdn.shopify.com/s/files/1/0637/6147/products/Miracle-BalmpTawny1_540x.jpg?v=1641779377" alt="img">
+                <div style="background-color: thistle; text-align: center; width: 60px; height: 20px; margin: auto ">
+                    <h6>New</h6>
+                </div>
+               <div id="pricebar">
+                <p>Jones Road</p>
+                <h4>Miracle Balm</h4>
+                <h5>$38.00</h5>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+               </div>
+               
+            </div>
+            <div id="verticalline"></div>
+            <div>
+                <img id="frontproductimg"src="https://cdn.shopify.com/s/files/1/0637/6147/products/face-pencil-shade1.jpg?v=1641610601" alt="img">
+                <div style="background-color: thistle; text-align: center; width: 60px; height: 20px; margin: auto ">
+                    <h6>New</h6>
+                </div>
+               <div id="pricebar">
+                <p>Jones Road</p>
+                <h4>The Face Pencil</h4>
+                <h5>$25.00</h5>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star "></span>
+                <span class="fa fa-star"></span>
+               </div>
+    
+            </div>
+            <div id="verticalline"></div>
+            <div id="hovereffect2">
+                <img id="frontproductimg" src="https://cdn.shopify.com/s/files/1/0637/6147/products/MF_MiniBakuchiolEcomm2000x2000_3d9016d2-b00e-4471-84a3-393f3e3fbfbc_720x.jpg?v=1638498639" alt="img">
+                <img id="imagetop2" src="https://cdn.shopify.com/s/files/1/0637/6147/products/20211029_EDITORIAL_BEAUTY_GOOP-GLOW-CLOUDBERRY_SHOT-02_00662_320x.jpg?v=1642217234" alt="img">
+                <div style="background-color: thistle; text-align: center; width: 60px; height: 20px; margin: auto ">
+                    <h6>New</h6>
+                </div>
+               <div id="pricebar">
+                <p>Harbivore Botanicals</p>
+                <h4>Moon Fruit Retinol Alternative Sleep <br> Mask</h4>
+                <h5>$54.00</h5>
+                 <div style="align-items: center;">
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+               </div>
+                 </div>
+            </div>
+        </div>
+    </div>   
+</body>
+</html>

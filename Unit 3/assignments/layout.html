@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar</title>
+<style>
+    body{
+        background-color: rgb(14,14,14);
+    }
+    #container{
+        width: 80%;
+        /* height:700px; */
+        border: 1px solid gold;
+        margin: auto;
+        margin-top: 50px;
+        display: grid;
+        background-color: white;
+        grid-template-columns: repeat(12,1fr);
+        grid-template-rows: 100px 200px 200px 200px ;
+        grid-gap:20px;
+        grid-template-areas: 
+        "a a a a a a a a a a a a"
+        "b b b b b b b c c c c c"
+        "b b b b b b b d d d d d" 
+        "b b b b b b b e e e e e"
+        "f f f f f f f f f f f f";
+    }
+    #container>div{
+        border: 1px solid white;
+        color: gray;
+    }
+    .box1{
+        grid-area: a;
+        background-color: yellow;
+    }
+    .box2{
+        grid-area: b;
+        background-color: rgb(255,0,0);
+    }
+    .box3{
+        grid-area: c;
+        background-color: rgb(0,255,42);
+    }
+    .box4{
+        grid-area: d;
+        background-color: rgb(0,255,42);
+    }
+    .box5{
+        grid-area: e;
+        background-color:rgb(0,255,42);
+    }
+    @media only screen and (min-width:0px) and (max-width:360px){
+        #container{
+            font-size: x-small;
+            grid-template-rows:70px  150px  100px  100px  100px;
+            grid-template-areas: 
+            "a a a a a a a a a a a a"
+            "b b b b b b b b b b b b"
+            "c c c c c c c c c c c c"
+            "d d d d d d d d d d d d"
+            "e e e e e e e e e e e e"
+           ;
+        } 
+     }
+    @media only screen and (min-width:361px) and (max-width:760px){
+        #container{
+            font-size: smaller;
+             grid-template-rows: 100px 200px 100px ;
+             grid-template-areas: 
+             "a a a a a a a a a a a a"
+             "b b b b b b b b b b b b"
+             "c c c c d d d d e e e e"
+             
+            
+             
+         }
+    }
+</style>
+</head>
+<body>
+    <div id="container">
+        <div class="box1"><h1>Navigation</h1></div>
+        <div class="box2"><h2>Left Box</h2></div>
+        <div class="box3"><h2>Right Box1</h2></div>
+        <div class="box4"><h2>Right Box2</h2></div>
+        <div class="box5"><h2>Right Box3</h2></div>
+    </div>
+</body>
+</html>

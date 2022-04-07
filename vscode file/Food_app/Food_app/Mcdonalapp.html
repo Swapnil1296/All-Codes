@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+   
+    <style>
+    
+
+  #place_Order{
+    display: flex;
+   
+   justify-content: space-around;
+    font-size: 30px;
+    width: 80%;
+    justify-items: center;
+    margin: 20px auto;
+    color:  rgb(109, 105, 104);
+  
+  }
+  #place_Order>input{
+    margin-top: 10px;
+  }
+ #button>button{
+   font-size: 15px;
+   border: 0;
+   padding: 5px;
+  border-radius: 10px;
+   background-color:  grey;
+   color: white;
+  }
+  #button{
+    width: 5%;
+    margin: auto;
+   
+  }
+  #nav{
+    background-color: rgb(189,25,6);
+   
+    padding: 10px 0px 0px 30px;
+  }
+  
+  #main{
+    
+    width: 70%;
+    margin: 20px auto;
+   text-align: center;
+  }
+  #image{
+
+    width: 400px;
+    margin: auto;
+  }
+  #image:hover {
+    cursor: pointer;
+  
+  }
+    </style>
+  </head>
+  <body>
+    <div id="nav">
+       <img src="https://images.mcdelivery.co.in/hardcastle-restaurants-pvt-ltd/image/upload/v1591261933/NewWebsiteResource2020/Assets/Img/Logo.svg" width="6%"  alt="">
+
+     
+
+    </div>
+    <div id="place_Order">
+
+      <input type="checkbox" id="a" value="1" />Mc-Aloo-Tikki
+      <input type="checkbox" id="b" value="2" />Mc-Aloo-Chicken Tikki 
+      <input type="checkbox" id="c" value="3" />Mc-Combo
+      <input type="checkbox" id="d" value="4" />Mc-Maharaja
+      <input type="checkbox" id="e" value="5" />Mc-Pizza
+    </div> 
+     <div id="button">
+       <button onclick="submit()">SUBMIT</button> 
+      </div>
+   
+    <div id="main"></div>
+  </body>
+</html>
+<script >
+
+let arr = [];
+
+async function submit() {
+ 
+
+// -------------------
+
+  var Allo_tikki = document.getElementById("a");
+
+  var Allo_chikan_tikki = document.getElementById("b");
+
+  var Combo = document.getElementById("c");
+
+  var Maharaja = document.getElementById("d");
+
+  var Pizza = document.getElementById("e");
+
+  if (Allo_tikki.checked) {
+    arr.push(Allo_tikki.value);
+    wait();
+  }
+
+  if (Allo_chikan_tikki.checked) {
+    arr.push(Allo_chikan_tikki.value);
+    wait();
+  }
+
+  if (Combo.checked) {
+    arr.push(Combo.value);
+    wait();
+  }
+
+  if (Maharaja.checked) {
+    arr.push(Maharaja.value);
+    wait();
+  }
+
+  if (Pizza.checked) {
+    arr.push(Pizza.value);
+    wait();
+  }
+
+  console.log(arr);
+
+  // ------------------promise function start here------------------------------------
+
+  let promise = new Promise(function (resolve, reject) {
+    setTimeout(function () {
+    
+      resolve(arr);
+    }, 5000);
+  });
+
+  var result = await promise;
+
+  arr = [];
+
+  console.log(result);
+  Show_food(result);
+}
+// ---------------------------------------------------------------
+
+
+
+
+
+
+
+function Show_food(result) {
+
+
+  let container = document.getElementById("main");
+  container.innerHTML = null;
+
+    let title= document.createElement("h1");
+    title.innerHTML="Enjoy Your Food"
+    title.style.color=" rgb(189,25,6)"
+    title.style.fontStyle="italic"
+   
+     container.append(title);
+    
+  result.map(function (el) {
+
+  
+
+    // -----------------------------
+
+
+    let image = document.createElement("img");
+
+
+    image.style.borderRadius = "20px";
+   
+    image.style.margin="20px";
+    image.setAttribute("id", "image");
+
+    if (el == 1) {
+      image.setAttribute(
+        "src",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuSP3BhxDbd6we6bRT47OLooBYlABmcIW9Hg&usqp=CAU"
+      );
+    } else if (el == 2) {
+      image.setAttribute(
+        "src",
+        "https://i.ytimg.com/vi/q7Idojp5ZY8/maxresdefault.jpg"
+      );
+    } else if (el == 3) {
+      image.setAttribute(
+        "src",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhK5Utf21O5IRF3uW4wNhCEkNGm6cMf_HCjw&usqp=CAU"
+      );
+    } else if (el == 4) {
+      image.setAttribute(
+        "src",
+        "https://mcdonaldsblog.in/wp-content/uploads/2021/05/McD-3-party-pack-combos.gif"
+      );
+    } else if (el == 5) {
+      image.setAttribute(
+        "src",
+        "https://cdn.pixabay.com/photo/2017/12/09/08/18/pizza-3007395__480.jpg"
+      );
+    }
+
+    container.append(image);
+  });
+}
+
+// -------------------
+
+
+
+
+function wait(){
+let container = document.getElementById("main"); 
+  container.innerHTML = null;
+
+  let image = document.createElement("img");
+  image.src="https://i.giphy.com/media/1otsbQWFH0x4m7n7lj/200w.webp";
+  image.style.borderRadius="20px";
+  image.style.width="40%"
+      
+  let title = document.createElement("h2");
+  title.innerHTML = "Wait...."
+  title.style.color= "blue"    
+      
+      
+      container.append(image,title);
+
+}
+
+
+
+
+</script>

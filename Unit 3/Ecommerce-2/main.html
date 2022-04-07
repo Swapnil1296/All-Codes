@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>main</title>
+    <style>
+        .nav{
+            display: flex;
+            background-color: cyan;
+            justify-content: space-between;
+            height: 50px;
+        }
+        .left{
+            color: midnightblue;
+            width: 63%;
+            font-family: sans-serif;
+            font-size: 26px;
+            padding: 10px;
+        }
+        .right{
+            color: gray;
+            display: flex;
+            justify-content: space-evenly;
+            width: 38%;
+        }
+        .right>div{
+            font-family: sans-serif;
+            font-size: 18px;
+            padding: 14px;
+        }
+        .right>div:hover{
+            background-color: rgb(112, 153, 153);
+            color: rgb(10, 10, 228);
+            font-size: larger;
+            cursor: pointer;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <div class="left">Meesho</div>
+        <div class="right">
+            <div id="sign">signup</div>
+            <div onclick="window.location.href='login.html' ">login</div>
+            <div id="men">men</div>
+            <div id="women">women</div>
+            <div id="about">About</div>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    document.querySelector("#sign").addEventListener("click",move_signup);
+    function move_signup(){
+        window.location.href="signup.html";
+    }
+
+
+    document.querySelector("#men").addEventListener("click",move_men);
+    function move_men(){
+        window.location.href="men.html";
+    }
+
+    document.querySelector("#women").addEventListener("click",move_women);
+    function move_women(){
+        window.location.href="women.html";
+    }
+
+    document.querySelector("#about").addEventListener( "click", function(){
+        window.location.href="about.html";
+    });
+
+</script>

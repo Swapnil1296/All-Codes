@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.iconify.design/2/2.1.2/iconify.min.js"></script>
+    <title>Document</title>
+    
+    <style>
+        *{
+            font-family: sans-serif;
+            
+        }
+      #main{
+          width: 100%;
+         
+          display: flex;
+          
+      }
+      #window{
+          width: 300px;
+          height: 100%;
+       
+      }
+      #content{
+          width: 100%;
+          /* border: 1px solid blue; */
+          overflow: scroll;
+         
+         
+      }
+      #icon{
+          width: 100%;
+          height:60px;
+         
+      }
+      #icon>img{
+          height: 100%;
+          width: 100%;
+      }
+     #menu{
+         width: 100%;
+         
+     }
+     #menu>div{
+         display: flex;
+      
+        
+     }
+     #menu>div>img{
+         width: 50px;
+         height: 25px;
+         margin-top: 15px;
+        
+     }
+
+     #navbar{
+         width: 100%;
+         height: 50px;
+         /* border: 1px solid rebeccapurple; */
+         display: flex;
+     }
+     #navbar>div>input{
+         width: 400px;
+         height:33px;
+        margin-left: 100px;
+        
+     }
+     #container{
+         display: grid;
+         grid-template-columns: repeat(3,1fr);
+         gap:20px;
+        
+     }
+     #container>div{
+         display: flex;
+         flex-direction: column;
+         box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+         padding: 10px;
+     }
+     
+    </style>
+</head>
+<body>
+   
+   <div id="main">
+      <div id="window">
+       <div id="icon">
+      
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Logo_of_YouTube_%282015-2017%29.svg/2560px-Logo_of_YouTube_%282015-2017%29.svg.png" alt="">
+
+       </div>
+       <div id="menu">
+           <div><i class="fa fa-home" style="font-size:24px;margin: 15px;"></i> <p>Home</p></div>
+           <div><i class="fa fa-compass" style="font-size:24px;margin: 15px;"></i> <p>Explore</p></div>
+           <div><span class="iconify" data-icon="mdi:youtube-subscription"style="font-size:24px;margin: 15px;"></span><p>Subscription</p></div>
+           <hr>
+           <div><span class="iconify" data-icon="ic:baseline-video-library" style="font-size:24px;margin: 15px;" ></span><p>Library</p></div>
+           <div><span class="iconify" data-icon="ic:twotone-history" style="font-size:24px;margin: 15px;"></span><p>History</p></div>
+           <div><span class="iconify" data-icon="akar-icons:video" style="font-size:24px;margin: 15px;"></span><p>Your Videos</p></div>
+           <div><span class="iconify" data-icon="ic:outline-watch-later" style="font-size:24px;margin: 15px;"></span><p>Watch Later</p></div>
+           <div><span class="iconify" data-icon="ant-design:like-outlined" style="font-size:24px;margin: 15px;"></span><p>Liked</p></div>
+           <hr>
+           <h4>SUBSCRIPTIONS</h4>
+           <div>
+               <img src="https://w7.pngwing.com/pngs/511/84/png-transparent-ab-tak-media-house-aaj-tak-bhilwara-ab-tak-news-abb-takk-news-television-emblem-text.png" alt="">
+               <h5>Aaj Tak</h5>
+           </div>
+           <div>
+               <img src="https://icon2.cleanpng.com/20180707/btr/kisspng-tez-tv-television-channel-india-today-television-s-5b403c531873d7.3221764915309364031002.jpg" alt="">
+               <h5>Sabse Tej</h5>
+           </div>
+       </div>
+      </div>
+
+
+      <!-- Navbar -->
+
+      <div id="content">
+       <div id="navbar">
+         <div>
+             <input type="text" id="searchTerm" placeholder="Search">  
+         </div>
+         <div> <button onclick="searchVideo()"><span class="iconify" data-icon="akar-icons:search" style="width: 20px; height: 30px;"></span></button></div> 
+            <div>
+                <span class="iconify" data-icon="el:mic-alt"  style="width: 40px; height: 35px;"></span>
+               </div>
+       </div>
+       
+       <hr>
+       <div id="container">
+
+       </div>
+      </div>
+   </div> 
+</body>
+</html>
+<script>
+
+    let container=document.getElementById("container");
+
+    let Api_key="AIzaSyBH8PYgdkuAKoDkmZbLOFPJ74EbevNAlPc";
+
+    async function searchVideo(){
+         
+        let userInput=document.getElementById("searchTerm").value;
+        try{
+            let res= await fetch(`https://youtube.googleapis.com/youtube/v3/search?key=${Api_key}&q=${userInput}&type=video&maxResults=20`);
+            let data=await res.json();
+
+          let videoList=data.items;
+          displayData(videoList);
+        }
+        catch(err){
+            console.log(err);
+        }
+    }
+    // searchVideo()
+
+    const displayData = (videosArray) =>{
+        // console.log(videosArray)
+        container.innerHTML=""
+        videosArray.forEach((video) =>{
+            
+            const{ id:{videoId}, }= video;
+            // console.log(videoId)
+
+            let videocard=document.createElement('div');
+
+            let iframe=document.createElement('iframe');
+            iframe.src=`https://www.youtube.com/embed/${videoId}`;
+            iframe.setAttribute("allowfullscreen",true)
+
+            videocard.append(iframe);
+            container.append(videocard);
+        })
+    }
+  
+</script>

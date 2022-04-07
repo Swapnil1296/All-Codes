@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>otp_page</title>
+</head>
+<body>
+    <h1>OTP Page</h1>
+    <form>
+        <input type="text"  id ="otp" placeholder="enter OTP">
+        <input type="submit" id="btn">
+        <h1 id="msg"></h1>
+    </form>
+</body>
+</html>
+
+<script>
+    document.querySelector("form").addEventListener("submit",confirm);
+
+    function confirm(event){
+        event.preventDefault();
+
+        var otp = document.querySelector("#otp").value;
+
+        if(otp == "1234"){
+            alert("your order has been confirmed, payment successful");
+            window.location.href = "main.html";
+        }else{
+            document.querySelector("#msg").textContent = "enter a valid otp";
+        }
+
+    }
+    
+</script>

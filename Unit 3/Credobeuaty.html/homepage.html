@@ -1,0 +1,1208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credobeauty</title>
+    <script src="https://kit.fontawesome.com/a3b844b34e.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@200;300&family=Oswald:wght@200&family=Roboto:wght@300&display=swap" rel="stylesheet">
+
+    <style>
+           /* ///////////////Homepage////////// */
+        
+
+           #frontimg{
+            width: 100%;
+            /* border: 1px solid red; */
+            margin-top: 10px;
+            cursor: pointer;
+
+        }
+        #frontext{
+          
+            /* border: 1px solid red; */
+            margin-top: 10px;
+            display: flex;
+            justify-content: center;
+        }
+      
+        #fronth3text{
+            margin-right: 5px;
+            padding: 0px;
+            color: steelblue;
+           
+        }
+        #fronth4text{
+            padding: 0px;
+            font-family:'Times New Roman', Times, serif;
+            color: rgb(212, 210, 208);
+        }
+        #fronttagline{
+          text-align: center;
+          font-size: xx-large;
+          color: steelblue;
+          font-weight: 400;
+        }
+        #frontboximg{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            grid-gap: 20px;
+           
+        }
+        #frontboximg>div{
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+            justify-content: center;
+        }
+        /* code for hover effect start */
+
+        #hovereffect{
+            position: relative;
+            cursor: pointer;
+
+        }
+        #hovereffect #imagetop1{
+            width: 320px;
+            height: 320px;
+            display: none;
+            position: absolute;
+            z-index: 99;
+            top: 0%;
+            left: 0%;
+           
+        }
+        #hovereffect:hover #imagetop1{
+            display: inline;      
+        }
+        #hovereffect2{
+            position: relative;
+            cursor: pointer;
+
+        }
+        #hovereffect2 #imagetop2{
+            width: 300px;
+            height: 250px;
+            display: none;
+            position: absolute;
+            z-index: 99;
+            top: 0%;
+            left: 0%;
+           
+        }
+        #hovereffect2:hover #imagetop2{
+            display: inline;      
+        }
+        #cga:hover{
+            color: white;
+        }
+
+       
+        /* end */
+
+        #frontboxtext{
+            text-align: center;
+          color: #222222;
+          margin: 5px;
+          font-size: x-large;
+          font-family: 'Roboto', sans-serif;
+        }
+        #bestsellerstag{
+            text-align: center ;
+            font-size: xx-large;
+            color: midnightblue;
+
+        }
+        #frontmiddlenavbar{
+            width: 75%;
+          
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(6,1fr);
+            justify-content: space-evenly;
+        }
+        #frontmiddlenavbar>div{
+            font-family: 'Roboto', sans-serif;
+            text-align: center;
+            cursor: pointer;
+           
+
+        }
+        #frontproductwindow{
+            width: 95%;
+            /* border: 1px solid black; */
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(7,1fr);
+            grid-gap: 15px;
+            font-family: 'Roboto', sans-serif;
+            cursor: pointer;
+        }
+       
+        #frontproductimg{
+            width: 290px;
+            height: 250px;
+        }
+     .checked {
+        color: skyblue        }
+        #pricebar{
+            text-align: center;
+        }
+        #pricebar>h4,p,h5{
+           margin: 5px;
+        }
+        #verticalline{
+            /* border: 1px solid red; */
+            width: 2px;
+            height: 200px;
+            margin-top: 100px;
+            background-color: thistle;
+        }
+        #marketingimage{
+            background-color: floralwhite;
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            margin-top: 60px;
+            grid-gap: 10px;
+        }
+       
+        #marketingtext{ 
+           height: 400px; 
+           margin-top: 200px;
+           margin-left: 30px;
+        }
+        #marketingtext>h1{
+            color: cadetblue;
+            font-size:xxx-large;
+            /* text-align: center; */
+          
+        }
+        #marketingtext>h3{
+            color:  rgb(85,85,85);
+           text-align: justify;
+           font-size: x-large;
+           font-family: 'Roboto', sans-serif;
+           font-weight: 300;
+
+        }
+        #marketingtext>button{
+            padding: 20px 35px 20px 35px;
+            background-color: rgb(92,151,193);
+            color: white;
+            border: 0px;
+        }
+        #marketingtext>button:hover{
+            background-color: gray;
+            color: black;
+        }
+        #highlightdiv{
+            text-align: center;
+            margin-top: 25px;
+            margin-bottom: 20px;
+        }
+        #highlightdiv>h1{
+            font-size: xxx-large;
+            color: rgb(24,36,74);
+
+        }
+        #bottomimage{
+            width: 100%;
+            font-family: 'Roboto', sans-serif;
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            /* grid-template-rows: repeat(2,450px); */
+            grid-gap: 20px;
+            cursor: pointer;
+           
+        }
+        #bimid{
+            height: 430px;
+            width: 430px;
+        }
+        #bottomimage>div{
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        }
+        #bottomimage>div>h3{
+            text-align: center;
+            margin: 10px;
+            font-family: sans-serif;
+            color: steelblue;
+            font-weight: lighter;
+            
+        }
+        #bottomimage>div>h2{
+            text-align: center;
+            margin: 2px;
+            color:#622222;
+            text-decoration: underline;
+            font-weight: lighter;
+            
+        }
+      
+
+        #bottominfobox{
+            width: 100%;
+            margin-top: 40px;
+            display:grid;
+            grid-template-columns: repeat(2,1fr);
+             background-color: whitesmoke;
+            grid-gap: 20px;
+        }
+       
+        
+        #bologo{
+            height: 300px;
+           width: 300px;
+           margin-top: 150px;
+           margin-left: 190px; 
+        }
+        #botext{
+          margin-right: 10px;
+          
+        }
+        #botext>h1{
+            color: midnightblue;
+            font-size:xxx-large;
+            text-align: justify;
+
+        }
+        #botext>h3{
+            color:  rgb(85,85,85);
+           text-align: justify;
+           font-size: x-large;
+           font-family: sans-serif;
+           font-weight: 300; 
+        }
+        #botext>button{
+            padding: 20px 35px 20px 35px;
+            background-color:#191970;
+            color: white;
+            border: 0px;
+            font-size: x-large;
+            cursor: pointer;
+        }
+        #botext>button:hover{
+            background-color: white;
+            color: black;
+            border: 1px solid black;
+        }
+        #companylogo{
+            background-color: whitesmoke;
+            display:flex;
+            margin-top: 60px;
+          
+        }
+        #mononimg{
+           
+            width: 220px;
+            height: 20px;
+            margin-left: 300px;
+            margin-top: 30px;
+
+        }
+        #mononimg>img{
+            width: 220px;
+            height: 20px;
+        }
+        #companylogo>div>h1{
+            margin-left: 10px;
+            color: rgb(82,79,97);
+        }
+        #followus{
+            text-align: center;
+            margin: auto;
+            margin-top: 70px;
+        }
+        #followus>h1{
+            font-size: xxx-large;
+            color: steelblue;
+            margin: 5px;
+            cursor: pointer;
+        } 
+        #followus>h3{
+           margin: 5px;
+        }
+          
+        #customerreview{
+            width: 90%;
+            margin: auto;
+            /* border: 1px solid black; */
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            grid-template-rows: repeat(2,300px);
+            grid-gap: 15px;
+            margin-top: 70px;
+        }
+        #customerreview>div{
+            width: 300px;
+            /* border: 1px solid black; */
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+            
+        }
+        #customerreview>div>img{
+            width: 100%;
+            height: 300px;
+            cursor: pointer;
+        }
+
+        /* contactbox  start */
+
+        #maincontactbox{
+            border: 1px solid black;
+            width: 100%;
+            height: 470px;
+            background-color:   #19254b;
+            margin-top: 70px;
+        }
+
+        #contactbox{
+           
+            display: flex;
+        }
+        
+        #contactbox>div>table{
+            margin-top: 50px;
+            margin-left: 120px;
+            color: white;
+            
+            font-family: 'Romanesco', cursive ;
+        }
+        #tinput{
+            border: none;
+            border-bottom: 2px solid white;
+           background-color: #19254b;
+           color: white;
+        }
+        #socialicon{
+            display:flex;
+            justify-content: space-between;
+            margin-left:120px ;
+            width: 190px;
+            margin-top: 10px;
+        }
+        #socialicon>div>i{
+            color: white;
+            font-size: x-large;
+        }
+        
+        #contactelogo{
+            display: flex;
+            margin-top: 15px;
+            margin-left: 170px;
+        }
+        #contactelogoimg1{
+         height: 100px;
+         width: 100px;
+        }
+        #contactelogoimg2{
+          height: 90px;
+          width: 90px;
+          margin-left: 20px;
+        }
+        #contacttextbox{
+          
+          
+           margin-left: 60px;
+           margin-top: 25px;
+           display: grid;
+           grid-template-columns: repeat(3,1fr);
+           
+           grid-gap: 20px;
+          
+        }
+        #contacttextbox>div{
+           
+            text-align: justify;
+            color: white;
+        }
+        #contacttextbox>div>h4{
+            cursor: pointer;
+            margin: 10px;
+            font-weight: lighter;
+            font-family: 'Roboto', sans-serif;
+        }
+        #contacttextbox>div>h3{
+            font-weight: lighter;
+        }
+        #payementcardicon{
+            /* border: 1px solid green; */
+            width: 600px;
+            margin-left: 550px;
+        }
+        #payementoptions{
+            /* border: 1px solid black; */
+            width: 200px;
+            color: rgb(219, 210, 210);
+          justify-content: space-evenly;
+            display: flex;
+        }
+        #atag1{
+            font-weight: lighter;
+            color: steelblue;
+            border: 0px;
+        }
+      /* end */
+
+          /* transition effect start */
+
+          .image__1{
+            position: relative;
+            width: 400px;
+         }
+        .image__img{
+            display: block;
+             width: 100%;
+        }
+        .image__overlay{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgb(0,0,0,0.6);
+            color:white;
+           
+            opacity: 0;
+            transition: opacity 0.25s;
+        }
+        .image__overlay:hover{
+            opacity: 1;
+        }
+      
+        .image__des{
+          
+            margin-top: 0.25em;
+            margin: 20px;
+            font-family: sans-serif;
+        }
+        .image__date{
+            margin-top: 160px;
+            margin-left: 20px;
+            font-family: sans-serif;
+        }
+            /* end */
+
+        /* mediaqueries start here */
+
+        @media only screen and (min-width:0px) and (max-width:360px){
+            #frontimg>img{
+                width: 400px;
+                height: 400px;
+            }
+            #frontboximg{
+                grid-template-columns: repeat(1,1fr );
+            }
+            #frontmiddlenavbar{
+                grid-template-columns: repeat(1,1fr);
+                font-size: small;
+            }
+            #frontmiddlenavbar>div{
+                border-bottom: 1px solid gray;
+            }
+            #hovereffect>img{
+                width: 350px;
+                height: 340px;
+              
+            }
+            #frontproductwindow{
+                grid-template-columns: repeat(1,1fr);
+                margin-top: 50px;
+               justify-content: center; 
+            }
+            
+            #frontproductwindow>div>img{
+                width: 200px;
+                height: 200px;
+               margin-left: 100px;  
+            }
+            #frontproductimg{
+                width: 200px;
+                height: 200px;
+        }
+            #verticalline{
+                width: 400px;
+                height: 2px;
+            }
+            #marketingimage{
+                grid-template-columns: repeat(1,1fr);
+            }
+            #marketingtext>h1{
+                font-size: 30px;
+                font-stretch: semi-condensed;
+                
+            }
+            #marketingtext>h3{
+                font-size: 20px;
+                font-stretch: semi-condensed;
+            }
+            #bottomimage{
+               grid-template-columns: repeat(1,1fr);
+               margin: auto;
+            }
+            #bimid{
+            height:340px;
+            width: 350px;
+        }
+            #bottomimage>div>h3{
+                font-size: smaller;
+            }
+            #bottomimage>div>h2{
+                font-size: medium;
+            }
+            #bottominfobox{
+                grid-template-columns: repeat(1,1fr);
+              
+
+            }
+            #bologo{
+              
+            height: 200px;
+           width: 200px;
+           margin-top: 100px;
+           margin-right: 50px;
+           margin: auto;  
+        }
+        #bologo>img{
+            width: 200px;
+            height: 200px;
+        }
+        #botext{
+          margin-right: 10px;
+          margin-top: 10px;
+          
+        }
+        #botext>h1{
+            color: midnightblue;
+            font-size:x-large;
+          
+
+        }
+        #botext>h3{
+            color:  rgb(85,85,85);
+           text-align: justify; 
+           font-size: large;
+           font-family: sans-serif;
+           font-weight: 300; 
+        } 
+        #companylogo{
+            flex-direction:column;
+            align-items: center;
+            width: 100%;
+        }
+        #mononimg{
+           
+            margin-left: 0;
+        }
+        #mononimg>img{
+            width: 200px;
+        }
+        #customerreview{
+            grid-template-columns: repeat(1,1fr);
+            grid-template-rows: repeat(8,300px);
+        }
+        #customerreview>div{
+            margin-top: 10px;
+        }
+        #contactbox{
+           
+         flex-direction: column;
+       }
+        #contactbox>div>table{
+            margin-top: 50px;
+            margin-left: 0;
+            color: white;
+            
+            font-family: 'Romanesco', cursive ;
+        }
+        #contactelogo{
+            flex-direction: column;
+            margin-left: 130px;
+        }
+        #contactelogoimg2{
+            margin-top: 20px;
+            margin-left:0;
+        }
+        #contacttextbox{
+            grid-template-columns:repeat(1,1fr);
+            margin: auto;
+
+        }
+        #maincontactbox{
+            height: inherit;
+        }
+        #payementcardicon{
+            width: fit-content;
+        }
+        #socialicon{
+            margin: auto;
+        }
+        #hovereffect:hover #imagetop1{
+            display: none;      
+        }
+        #hovereffect2:hover #imagetop2{
+            display: none;      
+        }
+       
+        }
+        @media only screen and (min-width:361px) and (max-width:730px){
+            #hovereffect:hover #imagetop1{
+            display: none;      
+        }
+        #hovereffect2:hover #imagetop2{
+            display: none;      
+        }
+           #frontimg>img{
+                width: 700px;
+                height: 300px;
+            }
+            #frontboximg{
+                grid-template-columns: repeat(2,1fr );
+                grid-gap:0;
+                
+            }
+            #fronttagline{
+                font-size: large;
+            }
+            #frontmiddlenavbar{
+                width: 98%;
+                margin-left: 10px;
+                grid-template-columns: repeat(1,1fr);
+              
+               justify-content: left;
+               
+            }
+            #frontmiddlenavbar>div{
+                border-bottom: 1px solid grey;
+               
+            }
+            #frontboximg>div{
+                box-shadow: none;
+            }
+            #hovereffect>img{
+                width: 300px;
+                height: 300px; 
+            }
+            #frontproductwindow{
+                grid-template-columns: repeat(2,1fr);
+                margin: auto;
+              
+            }
+            #frontproductwindow>div>img{
+                width: 200px;
+                height: 200px; 
+                margin-left: 70px;
+            }
+            #pricebar{
+                border-bottom: 1px solid gray;
+                text-align: center;
+                margin-left: 0;
+            }
+            #frontproductimg{
+                width: 200px;
+                height: 200px;
+        }
+            #verticalline{
+               display: none;
+            }
+            #marketingimage{
+                grid-template-columns: repeat(1,1fr);
+            }
+            #marketingtext>h1{
+                font-size: xx-large;
+                 
+            }
+            #marketingtext>h3{
+                font-size: 20px;
+                font-stretch: semi-condensed;
+            }
+            #bottomimage{
+               grid-template-columns: repeat(2,1fr);
+               margin: auto;
+            }
+            #bimid{
+            height:340px;
+            width: 350px;
+            }
+            #bottomimage>div>h3{
+                font-size:large;
+            }
+            #bottomimage>div>h2{
+                font-size: large;
+            }
+            #bottominfobox{
+                grid-template-columns: repeat(2,1fr);
+                width: 100%;
+               
+
+            }
+            #bologo{
+              
+            height: 200px;
+           width: 200px;
+           margin-top: 100px;
+           margin-right: 50px;
+           margin: auto;  
+        }
+        #bologo>img{
+            width: 200px;
+            height: 200px;
+        }
+        #botext{
+          margin-right: 10px;
+          margin-top: 10px;
+          
+        }
+        #botext>h1{
+            color: midnightblue;
+            font-size:x-large;
+           
+
+        }
+        #botext>h3{
+            color:  rgb(85,85,85);
+           text-align: justify; 
+           font-size: large;
+           font-family: sans-serif;
+           font-weight: 300; 
+        } 
+        #companylogo{
+            flex-direction:column;
+           align-items: center;
+        }
+       
+        #mononimg{
+           margin-top: 10px;
+            margin: auto;
+        }
+        #customerreview{
+            grid-template-columns: repeat(2,1fr);
+            grid-template-rows: repeat(4,300px);
+        }
+        #customerreview>div{
+            margin-top: 10px;
+        }
+        #contactbox{
+           
+         flex-direction: column;
+         margin: auto;
+       }
+        #contactbox>div>table{
+            margin-top: 50px;
+            margin-left: 40;
+            color: white;
+            
+            font-family: 'Romanesco', cursive ;
+        }
+        #contactelogo{
+         
+            margin-left: 50px;
+            width: 100%;
+           
+        }
+        #contactelogoimg2{
+            margin-top: 5px;
+            margin-left:320px;
+        }
+        #contacttextbox{
+            grid-template-columns:repeat(3,1fr);
+           
+
+        }
+        #socialicon{
+           margin-left: 170px;
+          
+            width: 300px;
+        }
+        #socialicon>div{
+            margin-top: 20px;
+            margin-left: ;
+           
+        }
+        #maincontactbox{
+            height: inherit;
+        }
+        #payementcardicon{
+          margin: auto;
+        }
+      
+        }
+       
+      
+    </style>
+</head>
+<body>
+    
+     <!-- /* ///////////////Homepage////////// */ -->
+     
+     <div id="frontext">
+        <h3 id="fronth3text">FREE SHIPPING</h3>
+        <h4 id="fronth4text"> ONE DAY LEFT! </h4>
+     </div>
+    
+     <div id="frontimg">
+         <img src="https://cdn.shopify.com/s/files/1/0637/6147/files/Jones-Road-HP-Desktop-1400x528_1360x.jpg?v=1641914312" alt="img">
+     </div>
+ 
+     <div id="fronttagline">
+         <h1>Clean Beauty Favorites</h1>
+     </div>
+ 
+     <div id="frontboximg">
+         <div id="hovereffect">
+             <img src="https://cdn.shopify.com/s/files/1/0637/6147/files/ButtomHeroBuckets_SkincareUnder40_hovor_320x.png?v=1640804902" alt="img">
+             <img id="imagetop1" src="https://images.unsplash.com/photo-1598528738936-c50861cc75a9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGJlYXV0eSUyMHByb2R1Y3R8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" alt="imag">
+             <h4 id="frontboxtext">SHOP <br> SKINCARE</h4>
+         </div>
+         <div id="hovereffect">
+             <img src="https://cdn.shopify.com/s/files/1/0637/6147/files/ButtomHeroBuckets_MU_hovor_f04ea7b0-f245-40fb-8bba-4882e4826f9d_320x.png?v=1640805056" alt="img">
+             <img id="imagetop1" src="https://images.unsplash.com/photo-1598460880248-71ec6d2d582b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8YmVhdXR5JTIwcHJvZHVjdHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" alt="img">
+             <h4 id="frontboxtext">SHOP <br> MAKEUP</h4>
+         </div>
+         <div id="hovereffect" >
+             <img src="https://cdn.shopify.com/s/files/1/0637/6147/files/ButtomHeroBuckets_Haircare_Hovor_320x.jpg?v=1640805178" alt="img">
+             <img  id="imagetop1" src="https://images.unsplash.com/photo-1580870069867-74c57ee1bb07?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8YmVhdXR5JTIwcHJvZHVjdHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" alt="img">
+
+             <h4 id="frontboxtext">SHOP <br> HAIRCARE</h4>
+         </div>
+         <div id="hovereffect">
+             <img src="https://cdn.shopify.com/s/files/1/0637/6147/files/ButtomHeroBuckets_bath_body_hovor_320x.png?v=1641244033" alt="img">
+             <img id="imagetop1" src="https://media.istockphoto.com/photos/makeup-palette-and-brushes-professional-eyeshadow-palette-picture-id1299164489?b=1&k=20&m=1299164489&s=170667a&w=0&h=GqoYQHfqq4UfbHFq9TlUp3isRCAqm9hoFqnxaKUEQEU=" alt="img">
+             <h4 id="frontboxtext">SHOP <br> BODYCARE</h4>
+         </div>
+     </div>
+ 
+     <div id="bestsellerstag">
+         <h1>Shop Bestsellers</h1>
+     </div>
+ 
+     <div id="frontmiddlenavbar">
+         <div>
+             <h4>VIEW ALL</h4>
+         </div>
+         <div>
+             <h4>TRENDING NOW </h4>
+         </div>
+         <div>
+             <h4>ONLY AT CREDO</h4>
+         </div>
+         <div><h4>MASCARA</h4></div>
+         <div><h4>FACIAL SERUMS</h4></div>
+         <div><h4>HAIR STYLING</h4></div>
+     </div>
+ 
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+     <div id="frontproductwindow">
+         <div id="hovereffect2">
+             <img id="frontproductimg" src="https://images.ulta.com/is/image/Ulta/2589236?op_sharpen=1&resMode=bilin&qlt=85&wid=290&hei=250&fmt=jpg" alt="img">
+             <img id="imagetop2" src="https://cdn.shopify.com/s/files/1/0637/6147/products/20211029_EDITORIAL_BEAUTY_GOOP-GLOW-CLOUDBERRY_SHOT-02_00662_320x.jpg?v=1642217234" alt="img">
+             <div style="background-color: thistle; text-align: center; width: 60px; height: 20px; margin: auto;">
+                 <h6>New</h6>
+             </div>
+            <div id="pricebar">
+             <p>Osea</p>
+             <h4>Undaria Algae Body Butter</h4>
+             <h5>$18.00-$48.00</h5>
+             <span class="fa fa-star checked"></span>
+             <span class="fa fa-star checked"></span>
+             <span class="fa fa-star checked"></span>
+             <span class="fa fa-star checked"></span>
+             <span class="fa fa-star"></span>
+            </div>
+            
+         </div>
+         <div id="verticalline"></div>
+         <div id="hovereffect2">
+             <img id="frontproductimg" src="https://cdn.shopify.com/s/files/1/0637/6147/products/Miracle-BalmpTawny1_540x.jpg?v=1641779377" alt="img">
+             <img id="imagetop2"src="https://cdn.shopify.com/s/files/1/0637/6147/products/Swatch_320x.png?v=1641852542" alt="img">
+             <div style="background-color: thistle; text-align: center; width: 60px; height: 20px; margin: auto ">
+                 <h6>New</h6>
+             </div>
+            <div id="pricebar">
+             <p>Jones Road</p>
+             <h4>Miracle Balm</h4>
+             <h5>$38.00</h5>
+             <span class="fa fa-star checked"></span>
+             <span class="fa fa-star checked"></span>
+             <span class="fa fa-star checked"></span>
+             <span class="fa fa-star checked"></span>
+             <span class="fa fa-star"></span>
+            </div>
+            
+         </div>
+         <div id="verticalline"></div>
+         <div id="hovereffect2">
+             <img id="frontproductimg"src="https://cdn.shopify.com/s/files/1/0637/6147/products/face-pencil-shade1.jpg?v=1641610601" alt="img">
+             <img  id="imagetop2"src="https://cdn.shopify.com/s/files/1/0637/6147/products/Face-pencil-swatch-1_320x.jpg?v=1641610376" alt="img">
+             <div style="background-color: thistle; text-align: center; width: 60px; height: 20px; margin: auto ">
+                 <h6>New</h6>
+             </div>
+            <div id="pricebar">
+             <p>Jones Road</p>
+             <h4>The Face Pencil</h4>
+             <h5>$25.00</h5>
+             <span class="fa fa-star checked"></span>
+             <span class="fa fa-star checked"></span>
+             <span class="fa fa-star checked"></span>
+             <span class="fa fa-star "></span>
+             <span class="fa fa-star"></span>
+            </div>
+ 
+         </div>
+         <div id="verticalline"></div>
+         <div id="hovereffect2">
+             <img id="frontproductimg" src="https://cdn.shopify.com/s/files/1/0637/6147/products/MF_MiniBakuchiolEcomm2000x2000_3d9016d2-b00e-4471-84a3-393f3e3fbfbc_720x.jpg?v=1638498639" alt="img">
+             <img  id="imagetop2" src="https://cdn.shopify.com/s/files/1/0637/6147/products/UABB_Lifestyle_320x.jpg?v=1640113156" alt="img">
+             <div style="background-color: thistle; text-align: center; width: 60px; height: 20px; margin: auto ">
+                 <h6>New</h6>
+             </div>
+            <div id="pricebar">
+             <p>Harbivore Botanicals</p>
+             <h4>Moon Fruit Retinol Alternative Sleep <br> Mask</h4>
+             <h5>$54.00</h5>
+              <div style="align-items: center;">
+                 <span class="fa fa-star checked"></span>
+                 <span class="fa fa-star checked"></span>
+                 <span class="fa fa-star checked"></span>
+                 <span class="fa fa-star checked"></span>
+                 <span class="fa fa-star checked"></span>
+            </div>
+              </div>
+         </div>
+     </div>
+ 
+     <div id="marketingimage">
+         <div id="marketingtext">
+             <h1>Making Beuty Kinder</h1>
+             <h3>Living the vegan life or
+                  not, we can all benefit 
+                  these innovation 
+                  vegan formulations. 
+                  Best-in-clean vegan beuty is 0% animal drived, 100% cruelty-free, and off-the-chart effective</h3>
+             <button><h2 style="margin: 0px; cursor: pointer;">SHOP VEGAN BEAUTY</h2></button>
+         </div>
+         <div>
+             <img src="https://cdn.shopify.com/s/files/1/0637/6147/files/MiniBanner_VeganBeauty_720x.jpg?v=1641244266" alt="img">
+         </div>
+     </div>
+ 
+     <div id="highlightdiv">
+         <h1>Clean Beauty Highlights</h1>
+     </div>
+ 
+     <div id="bottomimage">
+         <div>
+             <img id="bimid"  src="https://cdn.shopify.com/s/files/1/0637/6147/files/OSEAHyaluronicSeaSerum1oz675468100168handsmountainnature1_1_540x.jpg?v=1637107922" alt="img">
+             <h3>Ingredient Spotlight:Hyaluronic Acid-a 
+                 source of hydration for very dry and dull skin.</h3>
+             <h2 id="cga">SHOP HYALURONIC ACID</h2>
+         </div>
+         <div>
+             <img id="bimid"src="https://cdn.shopify.com/s/files/1/0637/6147/files/Foils-Group_1_540x.png?v=1636525040" alt="img">
+             <h3>Product Spotlight:8 multi-use color hues across <br> 2 blendable formulas.</h3>
+             <h2>SHOP EXA LIGHT SHOW</h2>
+         </div>
+         <div>
+             <img id="bimid"src="https://cdn.shopify.com/s/files/1/0637/6147/files/MiniBanner_CleanStandardBlog_v1Safety_540x.jpg?v=1641244763" alt="img">
+             <h3>The Credo Clean Standard: Bringing Safety, Sustainability, and Transparancey to Beauty.</h3>
+             <h2>ON THE BLOG</h2>
+             
+         </div>
+         <div>
+             <img id="bimid" src="https://cdn.shopify.com/s/files/1/0637/6147/files/SquareContentBucket-LiveChat_Ciara_540x.jpg?v=1634240761" alt="img">
+             <h3>Skin concerns, shade matching, and more.</h3>
+             <h2>CHAT NOW</h2>
+         </div>
+         <div>
+             <img  id="bimid"src="https://cdn.shopify.com/s/files/1/0637/6147/files/April-May_SquareContentBucket_store_v3_540x.jpg?v=1634240788" alt="img">
+             <h3>We are open and beauty services are available at select stores.</h3>
+             <h2>BOOK A SERVICE</h2>
+         </div>
+         <div>
+             <img id="bimid"src="https://cdn.shopify.com/s/files/1/0637/6147/files/JonesRoad-HP_SquareContentBucket-2022_540x.jpg?v=1641928380" alt="img">
+             <h4 style="color: black; text-align: center;margin: 5px;">New Only at Credo</h4>
+             <h3>High-performing, clean easy-to-use multi-purpose products.
+                  Jones Road is a lifetime of beauty knowledge, distilled.</h3>
+                  <h2>SHOP JONES ROAD</h2>
+ 
+         </div>
+     </div>
+ 
+     <div id="bottominfobox">
+         <div id="bologo"> 
+             <img src="https://cdn.shopify.com/s/files/1/0637/6147/files/f-inal-clean-seal_3x_250x_c9f926e2-30fd-421e-ad43-59145eacdd7b_260x.png?v=1578658779" alt="logo">
+         </div>
+         <div id="botext">
+             <h1>The Credo Clean <br>  Standard &trade;</h1>
+             <h3>Our mission is to change the way people think about
+                  Ingredients and products they put on their bodies.
+                   We want to create a safer, more sustainable, more ethical beauty industry.
+                    We call it "Clean Beauty."</h3>
+             <button>LEARN MORE</button>
+         </div>
+     </div>
+ 
+     <div id="companylogo">
+      <div id="mononimg">
+           <img src="https://cdn.shopify.com/s/files/1/0637/6147/files/1280px-Fast_Company_logo.svg_7397ec59-81ff-4d61-b0a4-ef29b7a2d139_1360x.png?v=1637006907" alt="img">
+        </div>
+
+        <div>
+            <h1>&#8220;World's Most Innovative Beauty Company &#8222;</h1>
+        </div>
+ 
+     </div>
+ 
+     <div id="followus">
+         <h3>FOLLOW US</h3>
+         <h1>&#64;Credobeauty</h1>
+     </div>
+     <div id="customerreview">
+         <div  class="image__1">
+             <img class="image__img"src="https://image.freepik.com/free-photo/layout-cosmetic-makeup-beauty-products_23-2148113429.jpg" alt="img">
+             <div class="image__overlay">
+                <p class="image__des">
+                    A cleanser that's all hydration, and no foam <i class="fas fa-cloud-showers-heavy"></i><br> turns out orange peels are......
+                </p>
+                <p class=" image__date">JANUARY 19,2022</p>
+             </div>
+         </div>
+         <div class="image__1" >
+             <img  class="image__img" src="https://image.freepik.com/free-photo/young-woman-with-eye-make-up_23-2147655340.jpg" alt="img">
+             <div class="image__overlay" >
+                 <p  class="image__des">wild guess here, but we think you'd loved<i class="fas fa-heart" style="color: red;"></i> smooth skin</p>
+                 <p class=" image__date">JANUARY 22,2022</p>
+             </div>
+         </div>
+         <div class="image__1">
+             <img class="image__img"src="https://media.istockphoto.com/photos/natural-skin-care-products-picture-id1309359637?b=1&k=20&m=1309359637&s=170667a&w=0&h=0AUIYBb0NBPKx4tGpz79_YD7uhzsIC7llR4br20lMl4=" alt="img">
+             <div class="image__overlay" >
+                <p  class="image__des"> A new cleanser that's bursting the plastic world's bubble<i class="fas fa-heart" style="color: red;"></i></p>
+                <p class=" image__date">JANUARY 24,2022</p>
+            </div>
+         </div>
+         <div class="image__1"> 
+             <img src="https://media.istockphoto.com/photos/ecofriendly-tubes-and-bottles-from-the-natural-wood-and-brown-glass-picture-id1302853050?b=1&k=20&m=1302853050&s=170667a&w=0&h=Dc7B_CVGMNzcN4KRfnFSvBV4oyl2dIQOwggvqS_zpD4=" alt="img">
+             <div class="image__overlay" >
+                <p  class="image__des">The beauty Industry has a packaging problem. We're on a mission to clean it up<i class="fas fa-sun" style="color: orange;"></i>....</p>
+                <p class=" image__date">JANUARY 20,2022</p>
+            </div>
+         </div>
+         <div class="image__1">
+             <img src="https://media.istockphoto.com/photos/beauty-products-isolated-on-white-background-picture-id1249579132?b=1&k=20&m=1249579132&s=170667a&w=0&h=TzpoCm-5pV3cUaXswldqw3WMPh-HwOxsggPPoVQSN9I=" alt="img">
+             <div class="image__overlay" >
+                <p  class="image__des">Your entire routine could be clean, and celeb makeup <br> artist approved <i class="fas fa-check" style="color: orange;"></i></p>
+                <p class=" image__date">JANUARY 11,2022</p>
+            </div>
+         </div>
+         <div class="image__1">
+             <img src="https://images.unsplash.com/photo-1598528738936-c50861cc75a9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8YmVhdXR5JTIwcHJvZHVjdHN8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" alt="img">
+             <div class="image__overlay" >
+                <p  class="image__des"> Transparancey is our thing<i class="fas fa-search" style="color: blueviolet;"></i><br> What's in your beauty product The Credo...</p>
+                <p class=" image__date">JANUARY 3,2022</p>
+            </div>
+         </div>
+         <div class="image__1">
+             <img src="https://images.unsplash.com/photo-1608979048467-6194dabc6a3d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8YmVhdXR5JTIwcHJvZHVjdHN8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" alt="img">
+             <div class="image__overlay" >
+                <p  class="image__des">A Monday boost for long weekends with no chill...</p>
+                <p class=" image__date">JANUARY 30,2022</p>
+            </div>
+         </div>
+         <div class="image__1">
+             <img src="https://images.unsplash.com/photo-1542452255191-c85a98f2c5d1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8YmVhdXR5JTIwcHJvZHVjdHN8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" alt="">
+             <div class="image__overlay" >
+                <p  class="image__des">Your best freinds hangin' <br>out together<i class="far fa-smile" style="color:yellow"></i><br> The only thing @exa.beauty'....</p>
+                <p class=" image__date">JANUARY 1,2022</p>
+            </div>
+         </div>
+     </div>
+     
+     <!-- contactbox -->
+     <div id="maincontactbox">
+ 
+     <div id="contactbox">
+             <div>
+                 <table>
+                     <thead>
+                         <tr>
+                             <th style="font-weight: lighter;">Your Daily Dose of Beauty:</th>
+                             <th><input  id="tinput" type="email" placeholder="Enter your email address...>"></th>
+                         </tr>
+                     </thead>
+                 </table>
+                 <div id="socialicon">
+                     <div>
+                        <i class="fab fa-instagram"></i>
+                     </div>
+                     <div><i class="fab fa-facebook-f"></i></div>
+                     <div><i class="fab fa-twitter"></i></div>
+                     <div><i class="fab fa-youtube"></i></div>
+ 
+                 </div>
+                 <div id="contactelogo">
+                     <div>
+                         <img id="contactelogoimg1" src="https://cdn.shopify.com/s/files/1/0637/6147/files/Credo_Logo_White_web_1_120x.png?v=1636718851" alt="logo">
+                     </div>
+                     <div>
+                         <img id="contactelogoimg2"  src="https://cdn.shopify.com/s/files/1/0637/6147/files/Badge-reviewedby-black_271a3720-5df8-4118-a01b-d4d85bf20b7f_120x.png?v=1636718743" alt="logo">
+                     </div>
+                 </div>
+             </div>
+ 
+             <div id="contacttextbox">
+                 <div>
+                      <h3>ABOUT US</h3>
+                     <h4>Why Credo</h4>
+                     <h4>The Dirty List</h4>
+                     <h4>Credo For Change</h4>
+                     <h4>Cruelty Free</h4>
+                     <h4>Find a Store</h4>
+                     <h4>Blog </h4>
+                     <h4>Careers</h4>
+                      
+                 </div>
+                 <div>
+                     <h3>RESOURCES</h3>
+                     <h4>My Account</h4>
+                     <h4>You Product Finder</h4>
+                     <h4>Refer a Freind</h4>
+                     <h4>StudentBeans</h4>
+                     <h4>Accessibility</h4>
+                     <h4>Terms of Use</h4>
+                     <h4>Privacy Policy</h4>
+                 </div>
+                 <div>
+                     <h3>CONTACT US</h3>
+                     <h4>Credo Live (Chat with us)</h4>
+                     <h4>FAQs</h4>
+                     <h4>arealperson@credobeauty.com</h4>
+                     <h4>1-844-692-7336</h4>
+                 </div>
+                
+         </div>
+         
+            
+     </div>
+     <div id="payementcardicon">
+         <div>
+             <h4 style="color: white;margin: 5px; font-family: 'Roboto', sans-serif; font-weight: lighter;">A portion of
+                 every purchase made on <a  id="atag1"href="">Credo beauty</a>
+                 is donated to <a id="atag1" href=""> Lipistick angle</a>.</h4>
+         </div>
+         <div id="payementoptions">
+             <i class="fab fa-usps"></i>
+             <i class="fab fa-usps"></i>
+             <i class="fab fa-cc-discover"></i>
+             <i class="fab fa-paypal"></i>
+             <i class="fab fa-vimeo"></i>
+             <i class="fab fa-cc-visa"></i>
+ 
+ 
+         </div>
+ 
+     </div>
+ 
+ </div>
+</body>
+</html>

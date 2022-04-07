@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html>
+<body>
+<form id="swapnil">
+  <p>Name:</p>
+  <input type="text" required ><br><br>
+  <p >Number:</p>
+  <input type="text" required><br><br>
+   <p>City:</p>
+  <input type="text" required><br><br>
+
+  <input type="submit" value="Submit">
+</form>
+
+
+
+<p id="demo"></p>
+
+<script>
+let arr = [];
+
+document.getElementById("swapnil").addEventListener("submit", function(){
+event.preventDefault()
+let name = event.target[0].value
+let number = event.target[1].value
+let city = event.target[2].value
+
+
+const Student = new Students(name,number, city); // invoke constructor function.
+
+arr.push(Student)
+console.log(arr)
+alert(`${name} Submission completed` );
+localStorage.setItem("Students",JSON.stringify(arr));
+
+})
+
+
+
+
+// Constructor function for Student objects
+
+function Students(Name,Number,City) {
+  this.Name = Name;
+  this.Number = Number;
+  this.City = City;
+  
+}
+
+ 
+</script>
+
+</body>
+</html>
+
+
+ 

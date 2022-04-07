@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>card_page</title>
+    <style>
+        #container{
+            width: 80%;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            grid-gap: 20px;
+        }
+        #container>div{
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+        }
+        #container>div h3{
+            margin-left: 10px;
+            font-family: sans-serif;
+        }
+        #price_box{
+            display: flex;
+            justify-content: space-between;
+            padding: 0 10px;
+        }
+        #price_box p:nth-child(1){
+            font-family: sans-serif;
+        }
+        #price_box p:nth-child(2){
+            font-family: sans-serif;
+            text-decoration: line-through;
+        }
+        button{
+            border: 0px;
+            background-color: blue;
+            color: white;
+            line-height: 40px;
+            font-family: sans-serif;
+            font-size: larger;
+            margin: 0px 0px 10px 10px;
+            border-radius: 10px;
+            box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Add to Cart</h1>
+    <div id="container">
+
+    </div>
+    <h3 id="total"></h3>
+    <h3 id="T_item"></h3>
+    <form>
+        <input type="text" id="promo">
+        <input type="submit" id="promo_btn" value="apply promo">
+    </form>
+    <p id="promo_msg"></p>
+    <button onclick="window.location.href='check_out_page.html'">Check out</button>
+</body>
+</html>
+<SCript>
+
+    var arr_card = JSON.parse(localStorage.getItem("card_data")) || [];
+    
+
+    arr_card.map(function (data,index){
+
+        var item_div = document.createElement("div");
+        item_div.setAttribute("id","item_div");
+
+        var image = document.createElement("img");
+        image.setAttribute("src", data.image_url);
+
+        var name = document.createElement("h3");
+        name.textContent = data.name;
+
+        var price_box = document.createElement("div");
+        price_box.setAttribute("id","price_box");
+
+        var price = document.createElement("p");
+        price.textContent = data.price;
+
+        var strk_price = document.createElement("p");
+        strk_price.textContent = data.strikedoffprice;
+
+        price_box.append(price, strk_price);
+
+        var del_btn = document.createElement("button");
+        del_btn.style.backgroundColor="red";
+        del_btn.textContent = "Delete item";
+        del_btn.addEventListener("click",function(){
+            delete_item(index);
+        })
+
+        item_div.append(image, name, price_box, del_btn);
+        document.querySelector("#container").append(item_div);
+
+    });
+
+    function delete_item(index){
+        arr_card.splice(index,1);
+        localStorage.setItem("card_data",JSON.stringify(arr_card));
+        location.reload();
+     }
+
+    var total_price = arr_card.reduce(function (sum,cv){
+        return sum+Number(cv.price);
+    },0)
+
+    var total_item = arr_card.reduce(function (T_item, cv){
+        return arr_card.length;
+    },0);
+
+    document.querySelector("form").addEventListener("submit",check_discount);
+    
+    function check_discount(event){
+        event.preventDefault();
+        var promo_code = document.querySelector("#promo").value;
+        if(promo_code == "masai30"){
+            discount = total_price - ((total_price*30)/100);
+            total_price = discount;
+            document.querySelector("#total").textContent = "Total Price Is:"+total_price;
+            alert("promo applied succesful");
+        }else{
+            var promo_msg = document.querySelector("#promo_msg")
+            promo_msg.style.color="red";
+            promo_msg.textContent = "enter valid promo code";
+        }
+    }
+
+    document.getElementById("total").textContent = "Total Price Is:"+total_price;
+
+    document.querySelector("#T_item").textContent = "Total items Is:"+total_item;
+
+
+</SCript>

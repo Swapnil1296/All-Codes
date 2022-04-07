@@ -1,0 +1,26 @@
+#navbar{
+    width: 90%;
+    border: 1px solid red;
+    height: 50px;
+    margin: auto;
+    display: flex;
+    justify-content: end;
+ }
+ #navbar>div{
+   display: flex;
+  
+ }
+ #navbar>div>p{
+   margin-right: 10px;
+ }
+ a{
+   margin-top: 10px;
+   margin-right: 10px;
+ }
+ #menu{
+   display: grid;
+   grid-template-columns: repeat(4,1fr);
+ }
+ img{
+   width: 60%;
+ }

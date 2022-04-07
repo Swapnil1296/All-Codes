@@ -1,0 +1,336 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+ 
+  <style>
+        
+ 
+      
+        #box{
+
+display: flex;
+width: 55%;
+/* border: 1px solid red; */
+margin: 5px auto 20px auto;
+
+height: 300px;
+/* border: 1px solid red;
+*/
+
+
+
+}
+#container>P{
+margin: 0px;
+font-style: italic ;
+font-size: 18px;
+}
+#container {
+
+
+padding: 10px;
+text-align: center;
+font-size: 20px;
+margin-right: 30px;
+border-radius: 20px;
+height: 100%;
+
+}
+#container:hover{
+box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+cursor: pointer;
+
+}
+/* ------------------------------map style---------- */
+
+.mapouter {
+  position: relative;
+  text-align: right;
+
+ 
+
+}
+
+.gmap_canvas {
+  overflow: hidden;
+  background: none !important;
+  border-radius: 10px;
+  margin-left: 20px;
+
+
+
+}
+
+#nav{
+display: flex;
+text-align: right;
+/* background-color: blue; */
+justify-content: space-between;
+color: rgb(127, 15, 219);
+font-style: italic;
+height: 0px;
+}
+#nav>#left{
+
+margin-left: 30px;
+}
+#right{
+margin-left: 600px;
+margin-top: 30px;
+
+}
+#right>h3{
+  font-family: sans-serif;
+  color: rgb(10, 209, 209);
+}
+#city{
+border: 2px solid gray;
+width: 300px;
+
+}
+#btn_{
+  background-color: aliceblue;
+  border: none;
+  font-size: 14px;
+}
+
+#Day_data{
+display: grid;
+
+margin: auto;
+
+width: 90%;
+height: 250px;
+grid-template-columns: repeat(7,1fr);
+grid-template-rows: repeat(1,1fr);    
+}
+
+#Day_data>div{
+
+
+text-align: center;
+
+margin: 8px;
+}
+#Day_data>div>p{
+
+font-size: 15px;
+margin: "0px";
+padding-top:  10px;
+
+}
+
+#Day_data>div:hover{
+
+
+box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+cursor: pointer;
+border-radius: 20px;
+
+}
+
+
+/* --------------------------------------------------------------------------------------------------- */
+  </style>
+  </head>
+  <body>
+    <div id="right"> 
+      <h3>Search Here By City Name</h3>
+      <input type="text" id="city" />
+
+      <button  id="btn_" onclick="getWeatherData()">Search</button>
+    </div>
+   <div id="nav"> 
+    <div id="left">
+       <h1>Weather-Report</h1>
+
+    </div>
+   
+  
+  </div>
+    <div id="box">
+
+
+        <div id="container"></div>
+
+        <!-- ----------------------------------------- -->
+    
+        <div class="mapouter">
+          <div class="gmap_canvas">
+            <iframe id="gmap_canvas" width="500" height="300"  frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+            <a href="https://123movies-to.org"></a><br />   
+            <a href="https://www.embedgooglemap.net"></a>
+          </div>
+        </div>
+    
+        <!-- ------------------------------------------------------------  -->
+       
+    </div>
+    <div id="Day_data"></div>
+    
+  </body>
+</html>
+
+
+
+
+
+<script>
+  let key = "5c4599f8826400804c089bce7cbbac07";
+
+let container = document.getElementById("container");
+let iframe = document.getElementById("gmap_canvas");
+
+async function getWeatherData() {
+  try {
+    let city = document.getElementById("city").value;
+
+    let res = await fetch(
+      `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}&units=metric`
+
+
+
+  
+
+
+    );
+
+    let day = await fetch(  ` http://api.openweathermap.org/data/2.5/forecast/?q=${city}&cnt=7&appid=${key}`);
+
+    let day_data = await day.json();
+
+    let data = await res.json();
+
+    console.log("Day_data:", day_data);
+ 
+    
+    console.log("data:", data);
+
+    showWeather(data);
+    showDayData(day_data);
+
+  } catch (err) {
+    console.log("err:", err);
+  
+  }
+}
+
+
+// --------------------------------------------Show Weather-----------------------------
+
+function showWeather(D) {
+  console.log("D:", D);
+
+  container.innerHTML = null;
+
+  let name = document.createElement("h3");
+   name.style.margin="0px"
+  name.style.color=" rgb(236,110,76)";
+
+  name.innerText = `${D.name}`;
+
+  // -------
+  let weather = document.createElement("div");
+
+
+  let text = document.createElement("h4");
+  text.innerText = `${D.weather[0].main}`;
+
+  let img = document.createElement("img");
+
+   img.src = `http://openweathermap.org/img/wn/${D.weather[0].icon}@2x.png`;
+
+  weather.append(img,text);
+
+  // -------
+  let temp = document.createElement("p");
+
+  temp.innerText = `Temp-Min - ${D.main.temp_min}°C`;
+
+  let temp1 = document.createElement("p");
+
+  temp1.innerText = `Temp-Max - ${D.main.temp_max}°C`;
+  // --------
+
+  let clouds = document.createElement("p");
+
+  clouds.innerText = `clouds - ${D.clouds.all}`;
+
+  // -------
+
+  let wind = document.createElement("p");
+
+  wind.innerText = `Wind-Speed - ${D.wind.speed}`;
+
+  // --------------------
+
+
+  iframe.src=`https://maps.google.com/maps?q=${D.name}&t=k&z=13&ie=UTF8&iwloc=&output=embed`;
+
+  container.append(name,weather,temp,temp1,clouds,wind);
+}
+
+// -------------- Show Day_data------------------------------------------
+
+var arr = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","saturday"]
+
+
+function showDayData(Day){
+
+console.log("Day :",Day);
+
+let box =document.getElementById("Day_data");
+box.innerHTML = null;
+var i = 0;
+Day.list.map(function(el){
+    
+    let div = document.createElement("div");
+
+
+    let name = document.createElement("h2");
+
+   
+    name.innerText = arr[i];
+    name.style.color ="blue";
+    name.style.margin="0px";
+  
+    // -------
+    let weather = document.createElement("div");
+  
+  
+    let text = document.createElement("h3");
+    text.innerText = `${el.weather[0].main}`;
+  
+    let img = document.createElement("img");
+  
+     img.src = `http://openweathermap.org/img/wn/${el.weather[0].icon}@2x.png`;
+  
+    weather.append(img,text);
+  
+    // -------
+    let temp = document.createElement("p");
+  
+    temp.innerText = `Temp-Min - ${el.main.temp_min}°C`;
+  
+    
+  
+    let wind = document.createElement("p");
+  
+    wind.innerText = `Wind-Speed - ${el.wind.speed}`;
+    
+    i++;
+
+    div.append(name,weather,temp,wind);
+    box.append(div);
+
+})
+
+
+}
+</script>

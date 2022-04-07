@@ -1,0 +1,44 @@
+<!-- 5c4599f8826400804c089bce7cbbac07 -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Document</title>
+    <link rel="stylesheet" href="movi.css" />
+    
+  </head>
+  <body>
+    <div id="upper">
+      <h1>Movies Ke Lootere</h1>
+      <div id="right">
+        <div>
+          <input
+            oninput="main()"
+            type="text"
+            id="movie"
+            placeholder="Enter Your Favorite Movies..........."
+          />
+
+          <button onclick="getMovieData()">Search</button>
+          <button id="trading-btn" onclick="window.location.href='trand.html'"> Trendig</button>
+        </div>
+        <div id="movies"></div>
+      </div>
+    </div>
+
+    <div id="slideshow">
+      <!--Show Slideshow here-->
+    </div>
+    <div id="container">
+      <!--Show Movies here-->
+    </div>
+    <div id="err"></div>
+    <div id="search_result"></div>
+  </body>
+</html>
+
+<script src="movi.js"></script>

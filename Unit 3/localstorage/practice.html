@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    localStorage.setItem("roll",234455);
+
+    localStorage.setItem("mobile","123456778");
+
+    var x=localStorage.getItem("roll");
+    console.log(x);
+
+  //storing arrays
+  var arr=["swapnil","nayan","balu","sharad"];
+  arr=JSON.stringify(arr);
+  localStorage.setItem("name",arr);
+
+  var g=localStorage.getItem("name");
+  console.log(g)
+
+  //storing objects;
+
+  var obj={name:"Swapnil",place:"wasai"};
+
+  obj=JSON.stringify(obj);
+  localStorage.setItem("me",obj);
+  var k=localStorage.getItem("me");
+//   k=JSON.parse(k);
+ var k=JSON.parse(localStorage.getItem("me"));
+  console.log(k.name)
+
+</script>

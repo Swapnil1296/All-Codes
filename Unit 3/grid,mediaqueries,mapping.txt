@@ -1,0 +1,100 @@
+       ||||||||Grid,Mediaqueries,mapping||||||||
+
+     <!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <style>
+        #container{
+            width: 90%;
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            grid-template-rows: 350px;
+            /* border: 1px solid black; */
+            margin: auto;
+            grid-gap: 20px;
+        }
+        div>div{
+            height: 100%;
+            width: 250px;
+            /* border: 1px solid green; */
+        }
+        img{
+            width: 250px;
+        }
+        h1{
+            text-align: center;
+        }
+        h3,h4{
+            margin: 2px;
+            padding-left: 10px;
+
+        }
+        @media  only screen and (max-width:360px){
+            #container{
+                grid-template-columns: repeat(1,1fr);
+                grid-template-rows: repeat(4,300px);
+                margin-left: 10px;
+            }
+           
+        }
+        @media  only screen and (min-width:360px)and (max-width:720px){
+            #container{
+                grid-template-columns: repeat(2,1fr);
+                grid-template-rows: repeat(2,300px);
+                grid-gap: 10px;
+            }
+        }
+       
+            
+        
+    </style>
+</head>
+<body>
+    <h1>Masai Practice</h1>
+    <div id="container">
+       
+</body>
+</html>
+<script>
+    var data=[
+{
+    imgurl:"https://masai-website-images.s3.ap-south-1.amazonaws.com/Kritika_Tripathi_716c47cbbd.jpg",
+    name:"Shraddha",
+    position:" V.C"
+
+},
+{
+    imgurl:"https://masai-website-images.s3.ap-south-1.amazonaws.com/Kritika_Tripathi_716c47cbbd.jpg",
+    name:"Shraddha",
+    position:" V.C"
+
+},
+{
+    imgurl:"https://masai-website-images.s3.ap-south-1.amazonaws.com/Kritika_Tripathi_716c47cbbd.jpg",
+    name:"Shraddha",
+    position:" V.C"
+
+},
+{
+    imgurl:"https://masai-website-images.s3.ap-south-1.amazonaws.com/Kritika_Tripathi_716c47cbbd.jpg",
+    name:"Shraddha",
+    position:" V.C"
+
+}
+];
+data.map(function(ele){
+   var div=document.createElement("div");
+   var img=document.createElement("img");
+   img.setAttribute("src",ele.imgurl);
+   var name=document.createElement("h3");
+   name.textContent=ele.name;
+   var h4=document.createElement("h4");
+   h4.textContent=ele.position;
+
+   div.append(img,name,h4);
+   document.querySelector("#container").append(div);
+})
+     
+
+</script>

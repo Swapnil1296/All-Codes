@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search MOvies</title>
+    <style>
+    *{
+        background-color: teal;
+    }
+    #query{
+        width: 200px;
+        height: 10px;
+        border-color: wheat;
+    }
+    /* #movies{
+        width: 206px;
+        height:200px;
+        display: flex;
+        border: 1px solid goldenrod;
+        overflow: scroll;
+    } */
+
+    
+    #container{
+        margin-top: 20px;
+        background-color: aliceblue;
+        width: 100%;
+        border: 1px solid goldenrod;
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+    }
+    </style>
+</head>
+<body>
+    <h1>Search MOvies here</h1>
+    <input oninput="debounce(main, 1000)" type="text"  id="query">
+    <div id="movies"></div>
+    <div id="container">
+        <div ondblclick="showdetails" id="details"></div>
+    </div>
+</body>
+</html>
+
+<script>
+  // eba5465a
+  
+async function searchMovies(){
+   try{
+    let movie=document.getElementById("query").value;
+    let res = await fetch(`http://www.omdbapi.com/?apikey=eba5465a&s=${movie}`);
+    let data= await res.json();
+  
+   return data.Search;
+  
+   }
+   catch(error){
+       console.log(err);
+   }
+}
+
+  async function main(){
+   let data= await  searchMovies();
+
+   if(data===undefined){
+       return false;
+   }
+//    appendMovies(data);
+   toBody(data)
+//    console.log(data)
+}
+
+
+let movies_div=document.getElementById("movies");
+
+function appendMovies(movies){
+
+    movies_div.innerHTML=null;
+
+    movies.forEach(function(ele){
+        
+        let p = document.createElement("p");
+        p.innerHTML=ele.Title;
+        let img=document.createElement("img");
+        img.src=ele.Poster;
+        img.style.width="100px";
+        movies_div.append(p,img)
+    });
+}
+
+
+
+
+
+let container=document.getElementById("container");
+
+function toBody(movies){
+    container.innerHTML=""
+  movies.forEach(function(ele){
+      let div=document.createElement("div");
+
+      let p=document.createElement("p");
+      p.innerHTML=ele.Title;
+
+      let img=document.createElement("img");
+      img.src=ele.Poster;
+
+      div.append(p,img)
+
+      container.append(div)
+
+  })
+}
+
+
+
+     let timerId;
+  function debounce(func,delay){
+    
+    if(timerId){
+        clearTimeout(timerId);
+    }
+
+
+   timerId= setTimeout(function(){
+        func();
+    },delay);
+  }
+
+</script>

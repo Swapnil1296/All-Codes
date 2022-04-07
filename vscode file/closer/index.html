@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <style>
+     
+       *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+*:focus{
+    outline: none;
+}
+body{
+    position: relative;
+    background-color: aliceblue;
+    font-family: 'roboto', sans-serif;
+}
+
+    #input-btn{
+        margin-top: 30px;
+        margin-left: 300px;
+    }
+    #input{
+        width: 300px;
+        height: 30px;
+        border: 2px solid #dbdbdb;
+    padding: 0 20px;
+    font-size: 16px;
+    text-transform: capitalize;
+        
+
+    }
+    #search-btn{
+        width: 50px;
+        height: 30px;
+      
+    background-color: #f0f0f0;
+    border: #dbdbdb;
+    padding: 5px 0;
+    border-left: none;
+    }
+    #showlist{
+      
+        width: 90%;
+        margin: auto;
+        height: 600px;
+        margin-top: 20px;
+          display: grid;
+          grid-template-columns: repeat(4,25%);
+          overflow: scroll;
+          background-image: url('https://cdn3.vectorstock.com/i/1000x1000/47/67/halloween-scary-background-vector-1014767.jpg');
+     
+        /* border: 1px solid blue; */
+        gap: 30px;
+    }
+    #trading-btn{
+        width: 50px;
+        height: 30px;
+        margin-left: 200px;
+        background-color: grey;
+        border-radius: 50px;
+        border: #dbdbdb;
+        color: white;
+    padding: 5px 0;
+    }
+    #movieinfo:hover{
+        cursor: pointer;
+        
+      
+    }
+  
+   #image{
+        width: 250px;
+        height: 300px;
+        margin-right: 10px;
+    }
+    #text{
+        color: white;
+        font-weight: 500;
+        padding: 2px;
+    }
+    *{
+        font-family: 'roboto',sans-serif;
+    }
+   </style>
+</head>
+<body>
+    <div id="container">
+        <div id="input-btn">
+            <input oninput="debounce(main,1000)" type="text" id="input" placeholder="Search">
+            <button id="search-btn">Search</button>
+            <button id="trading-btn" onclick="window.location.href='trending.html'"> Trendig</button>
+           
+        </div>
+    </div>
+        <div id="showlist">
+           <!-- <div id="movieinfo" onclick="location.href='https://www.imdb.com/title/${ele.imdbID}/?ref_=nv_sr_srsg_0'" >
+
+            <img id="image" src=${ele.Poster} alt="">
+            <p id="text">"Movie Name:"${ele.Title}</p>
+            <p id="text">"Relese date:"${ele.Released}</p>
+            <p id="text"> "Plot:"${ele.Plot}</p>
+        </div> -->
+    </div>
+</body>
+</html>
+
+<script>
+
+async function searchMovies(){
+   try{
+    let movie=document.getElementById("input").value;
+    let res = await fetch(`http://www.omdbapi.com/?apikey=eba5465a&s=${movie}`);
+    let data= await res.json();
+  
+   return data.Search;
+  
+   }
+   catch(error){
+       console.log(error);
+   }
+}
+
+  async function main(){
+   let data= await  searchMovies();
+
+   if(data===undefined){
+       return false;
+   }
+//    appendMovies(data);
+   toBody(data)
+//    console.log(data)
+}
+
+
+// let movies_div=document.getElementById("movies");
+
+// function appendMovies(movies){
+
+//     movies_div.innerHTML=null;
+
+//     movies.forEach(function(ele){
+        
+//         let p = document.createElement("p");
+//         p.innerHTML=ele.Title;
+//         let img=document.createElement("img");
+//         img.src=ele.Poster;
+//         img.style.width="100px";
+//         movies_div.append(p,img)
+//     });
+// }
+
+
+
+
+
+let showlist=document.getElementById("showlist");
+
+
+function toBody(movies){
+    showlist.innerHTML=""
+  movies.forEach(function(ele){
+   
+
+     showlist.innerHTML+=`<div id="movieinfo" onclick="location.href='https://www.imdb.com/title/${ele.imdbID}/?ref_=nv_sr_srsg_0'">
+
+<img id="image" src=${ele.Poster} alt="">
+<p id="text">Movie Name: ${ele.Title}</p>
+<p id="text">Relese date: ${ele.Year}</p>
+
+</div>
+           `
+  
+
+  })
+}
+
+
+
+     let timerId;
+  function debounce(func,delay){
+    
+    if(timerId){
+        clearTimeout(timerId);
+    }
+
+
+   timerId= setTimeout(function(){
+        func();
+    },delay);
+  }
+
+</script>

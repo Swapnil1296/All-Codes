@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>getElement</title>
+    <style>
+        #container{
+            border:  1px solid grey;
+            height: 210px;
+            width: 420px;
+            display: flex;
+            margin: auto;
+        }
+        button{
+            border: 0px;
+            background-color: rgb(0,123,255);
+            color: white;
+            padding: 7px 13px ;
+            margin-left: 10px;
+            border-radius: 5px;
+
+        }
+        h2,p{
+            margin-left: 10px;
+        }
+       
+        
+    </style>
+</head>
+<body>
+    <div id="container">
+      <!-- <div class="image"><img src="https://via.placeholder.com/200x210" alt=""></div>
+      <div class="text">
+          <h2>Alice Liddle</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+              Veniam pariatur incidunt quidem porro 
+              voluptate tempore.
+              </p>
+              <button>View Profile</button>
+      </div> -->
+    </div>
+</body>
+</html>
+
+<script>
+     var d1=document.createElement("div");
+     var image=document.createElement("img");
+     image.setAttribute("src","https://via.placeholder.com/200x210");
+      
+     var d2=document.createElement("div");
+      var heading= document.createElement("h2");
+      heading.textContent="Alice Liddle";
+      var para=document.createElement("p");
+      para.textContent="Alice is a freelance web designer and developer based in Londaon. She is specialized in HTml5, CSS3, Javascript, Bootsrap etc."
+      
+     var btn=document.createElement("button");
+     btn.textContent="Viw Profile"
+
+
+
+     d1.append(image);
+     d2.append(heading,para,btn)
+    document.querySelector("#container").append(d1,d2);
+</script>

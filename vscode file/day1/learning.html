@@ -1,0 +1,227 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+
+    <h2 id = "demo"></h2>
+    <h2 id = "demo1"></h2>
+    <h2 id = "demo2"></h2>
+    <h2 id = "demo3"></h2>
+    <h2 id = "demo4"></h2>
+    
+    
+</body>
+</html>
+
+
+<script>
+    var button = document.createElement("button"); 
+    button.textContent = "object"; // Assignment.
+    button.style.margin = "20px";  // Assignment.
+   
+  
+    button.addEventListener("click", function(){
+                
+       
+            
+               let a = " 1. Objects are always written in {} (Curly brackets)."; 
+               let b = " 2. Object is an entity, with properties and type.";  
+               let c = " 3. It defined as an unordered collection of related data, of primitive or reference types, in the form of “key: value” pairs.";  
+               let d = " 4. Nearly everything in JavaScript is an object other than six things that are not objects which are — null , undefined , strings, numbers, boolean, and symbols.";  
+               let e = " 5. objects are mutable."; 
+               
+               document.getElementById("demo").innerHTML = a;
+               document.getElementById("demo1").innerHTML = b;
+               document.getElementById("demo2").innerHTML = c;
+               document.getElementById("demo3").innerHTML = d;
+               document.getElementById("demo4").innerHTML = e;
+
+     
+            
+           
+            })
+
+
+    var button2 = document.createElement("button"); 
+    button2.textContent = "Array";
+    button2.style.margin = "20px";
+    button2.addEventListener("click", function(){
+                
+
+            
+               
+               let a = " 1. Arrays are always written in [] (Square bracket)." 
+               let b = " 2. Counting of array is always started from Zero.";
+               let c = " 3. Arrays are mutable."; 
+               let d = " 4. Arrays is an veriable which can hold more than one value at a time."; 
+               let e = " 5. It can store any value, it contain Numbers, Strings, Boolean, Arrays."; 
+               
+
+               document.getElementById("demo").innerHTML = a;
+               document.getElementById("demo1").innerHTML = b;
+               document.getElementById("demo2").innerHTML = c;
+               document.getElementById("demo3").innerHTML = d;
+               document.getElementById("demo4").innerHTML = e;
+           
+            })
+             
+
+
+var button3 = document.createElement("button"); 
+    button3.textContent = "Function";
+    button3.style.margin = "20px";
+    button3.addEventListener("click", function(){
+                
+
+            
+               
+               let a = " 1. Function is a block of code designed to perform a particular task."; 
+               let b = " 2. Its executed when something invokes it (calls it)."; 
+               let c = " 3. We can execute it as many times as we want."; 
+               let d = " 4. Statements that define the function, enclosed in curly brackets, {...}."; 
+               let e = " 5. Return is use in function to stop the function and return the output values."; 
+                
+
+               document.getElementById("demo").innerHTML = a;
+               document.getElementById("demo1").innerHTML = b;
+               document.getElementById("demo2").innerHTML = c;
+               document.getElementById("demo3").innerHTML = d;
+               document.getElementById("demo4").innerHTML = e;
+           
+            })
+
+
+var button4 = document.createElement("button"); 
+    button4.textContent = "strings";
+    button4.style.margin = "20px";
+
+    button4.addEventListener("click", function(){
+                
+
+            
+               
+               let a = " 1. Strings is group of character."; 
+               let b = " 2. It must be enclosed in single or double quotation marks.";
+               let c = " 3. It can't hold multiple value."; 
+               let d = " 4. Strings are immutable."; 
+               let e = " 5. Any sequence of characters is called as Strings — not just numbers, but letters and punctuation and all of Unicode."; 
+               
+
+               document.getElementById("demo").innerHTML = a;
+               document.getElementById("demo1").innerHTML = b;
+               document.getElementById("demo2").innerHTML = c;
+               document.getElementById("demo3").innerHTML = d;
+               document.getElementById("demo4").innerHTML = e;
+           
+            })
+
+
+var button5 = document.createElement("button"); 
+    button5.textContent = "Number";
+    button5.style.margin = "20px";
+
+    button5.addEventListener("click", function(){
+                
+
+            
+               
+               let a = " 1. Number is inbuild function in Javascript." 
+               let b = " 2. It use to converts a string or other value to the Number type.";  
+               let c = " 3. If the value can't be converted, it returns NaN."; 
+               let d = " 4. The value of NaN is Not-A-Number."; 
+               let e = " 5. string and numbers are immutable data types."; 
+               
+
+               document.getElementById("demo").innerHTML = a;
+               document.getElementById("demo1").innerHTML = b;
+               document.getElementById("demo2").innerHTML = c;
+               document.getElementById("demo3").innerHTML = d;
+               document.getElementById("demo4").innerHTML = e;
+           
+            })
+
+
+
+var button6 = document.createElement("button"); 
+    button6.textContent = "Null";
+    button6.style.margin = "20px";
+
+    button6.addEventListener("click", function(){
+                
+
+            
+               
+               let a = " 1. 'Null' is an object with a valid value." 
+               let b = " 2. It has no properties."; 
+               let c = " 3. 'Null' is non-mutable."; 
+               let d = " 4.  If we have to verify the object nature of 'null', We can use the 'typeof' operator."; 
+               let e = " 5. 'Null' is 'nothing'. It is supposed to be something that doesn't exist."; 
+               
+
+               document.getElementById("demo").innerHTML = a;
+               document.getElementById("demo1").innerHTML = b;
+               document.getElementById("demo2").innerHTML = c;
+               document.getElementById("demo3").innerHTML = d;
+               document.getElementById("demo4").innerHTML = e;
+           
+            })
+
+var button7 = document.createElement("button"); 
+    button7.textContent = "Undefined";
+    button7.style.margin = "20px";
+    button7.addEventListener("click", function(){
+                
+
+            
+               
+               let a = " 1. Undefined is a primitive value in JavaScript." 
+               let b = " 2. A variable or an object has an undefined value when no value is assigned before using it.";
+               let c = " 3. So we can say that undefined means lack of value or unknown value."; 
+               let d = " 4. It is a property of the global object."; 
+               let e = " 5. undefined can be return if the variable that is being evaluated does not have an assigned value."; 
+               
+
+               document.getElementById("demo").innerHTML = a;
+               document.getElementById("demo1").innerHTML = b;
+               document.getElementById("demo2").innerHTML = c;
+               document.getElementById("demo3").innerHTML = d;
+               document.getElementById("demo4").innerHTML = e;
+           
+            })
+
+  document.querySelector("body").append(button , button2 ,button3, button4 ,button5,button6,button7);
+
+</script>
+
+
+
+
+<!--  Hoisting -->
+
+<!--  it is a default behaviour of moving all declearation to the top of the current scope.
+      it only applicable on variables and function.
+      it only considers the declearation part & not the actual assignment. -->
+
+<!-- ------------------------------------------------------------------------------------------------------------------ -->
+
+<!-- Execuation stack -->
+<!-- it works based on the LIFO principle.
+     LIFO stands for last in first out  -->
+
+<!-- ------------------------------------------------------------------------------------------------------------------------ -->
+
+<!-- Mutability -->
+<!-- mutability defines as  a type of variable that can be changed. 
+     only Objects & Arrays are Mutable.-->
+
+<!-- --------------------------------------------------------------------------------------------------------------------------- -->
+
+<!-- Reassignment -->
+<!--  reassigning the value after assignment is known as reassignment -->

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1></h1>
+    <button id="dec">Decrement</button>
+    <button id="incr">Increment</button>
+</body>
+</html>
+<script>
+    document.querySelector("#dec").addEventListener("click",decFun)
+     var count=JSON.parse(localStorage.getItem("countvalue")) || 0;
+     document.querySelector("h1").textContent=count;
+     function decFun(){
+         count--;
+         localStorage.setItem("countvalue",count);
+         document.querySelector("h1").textContent=count;
+     }
+
+     var count=0;
+     function incrFun(){
+         count++;
+         localStorage.setItem("countvalue",count);
+         document.querySelector("h1").textContent=count;
+     }
+
+
+
+
+    document.querySelector("#incr").addEventListener("click",incrFun)
+</script>

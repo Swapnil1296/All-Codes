@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar</title>
+<style>
+    body{
+        background-color: rgb(14,14,14);
+    }
+    #container{
+        width: 80%;
+        border: 1px solid gold;
+        margin: auto;
+        margin-top: 50px;
+        display: grid;
+        background-color: white;
+        grid-template-columns: repeat(12,1fr);
+        grid-template-rows: 100px 200px;
+        grid-gap:20px;
+        grid-template-areas: 
+        "a a a a a a a a a a a a"
+        "b b b c c c d d d e e e" ;
+    }
+    #container>div{
+        border: 1px solid white;
+    }
+    .box1{
+        grid-area: a;
+        background-color: yellow;
+    }
+    .box2{
+        grid-area: b;
+        background-color: red;
+    }
+    .box3{
+        grid-area: c;
+        background-color: green;
+    }
+    .box4{
+        grid-area: d;
+        background-color: blue;
+    }
+    .box5{
+        grid-area: e;
+        background-color: grey;
+    }
+    @media only screen and (min-width:0px) and (max-width:360px){
+        #container{
+            grid-template-rows:70px  100px  100px  100px  100px;
+            grid-template-areas: 
+            "a a a a a a a a a a a a"
+            "b b b b b b b b b b b b"
+            "e e e e e e e e e e e e"
+            "c c c c c c c c c c c c"
+            "d d d d d d d d d d d d"
+           ;
+        }
+    }
+    @media only screen and (min-width:361px) and (max-width:760px){
+        #container{
+             grid-template-rows: 100px 200px 200px 200px;
+             grid-template-areas: 
+             "a a a a a a a a a a a a"
+             "b b b b b b d d d d d d"
+             "c c c c c c e e e e e e";
+         }
+    }
+</style>
+</head>
+<body>
+    <div id="container">
+        <div class="box1"><h1>Navigation</h1></div>
+        <div class="box2"><h2>Box1</h2></div>
+        <div class="box3"><h2>Box2</h2></div>
+        <div class="box4"><h2>Box3</h2></div>
+        <div class="box5"><h2>Box4</h2></div>
+    </div>
+</body>
+</html>

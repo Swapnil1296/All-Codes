@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <style>
+        .nav{
+            display: flex;
+            background-color: blue;
+            justify-content: space-between;
+            height: 50px;
+            border-radius: 10px;
+        }
+        .left{
+            color: yellow;
+            width: 63%;
+            font-family: sans-serif;
+            font-size: 26px;
+            padding: 10px;
+        }
+        .right{
+            color: yellow;
+            display: flex;
+            justify-content: space-evenly;
+            width: 38%;
+        }
+        .right>div{
+            font-family: sans-serif;
+            font-size: 18px;
+            padding: 14px;
+        }
+        .right>div:hover{
+            background-color: white;
+            color: blue;
+            font-size: larger;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <div class="left">Meesho</div>
+        <div class="right">
+            <div id="sign">Signup</div>
+            <div onclick="window.location.href='login.html' ">login</div>
+            <div id="men">men</div>
+            <div id="women">women</div>
+            <div id="about">About</div>
+        </div>
+    </div>
+    <h1>Login page</h1>
+    <form >
+        <input type="text" id="email" placeholder="Enter email">
+        <input type="number" id="mob"  placeholder="Enter number">
+        <input type="password" id="pass"  placeholder="Enter password">
+        <input type="submit" id="submit" value="LOGIN">
+    </form>
+</body>
+</html>
+<script>
+
+    // -----------------------------
+
+    document.querySelector("#sign").addEventListener("click",move_signup);
+    function move_signup(){
+        window.location.href="signup.html";
+    }
+
+
+    document.querySelector("#men").addEventListener("click",move_men);
+    function move_men(){
+        window.location.href="men.html";
+    }
+
+    document.querySelector("#women").addEventListener("click",move_women);
+    function move_women(){
+        window.location.href="women.html";
+    }
+
+    document.querySelector("#about").addEventListener( "click", function(){
+        window.location.href="about.html";
+    });
+
+    // -----------------------------
+    document.querySelector("form").addEventListener("submit", login);
+
+    var store_data = JSON.parse(localStorage.getItem("arr_usr_data"));
+
+    function login(event){
+        event.preventDefault();
+
+        var L_email = document.querySelector("#email").value;
+        var L_mob = document.querySelector("#mob").value;
+        var L_pass = document.querySelector("#pass").value;
+
+        for(var i=0; i<store_data.length; i++){
+            if(store_data[i].email == L_email && store_data[i].mob == L_mob && store_data[i].pass == L_pass){
+               alert("login successfull");
+                window.location.href="main.html";
+                break;
+            }
+        }
+    }
+</script>

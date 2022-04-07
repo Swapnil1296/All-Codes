@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trending Movie list</title>
+    <style>
+      body {
+        background-image: url("https://wallpapercave.com/wp/wp9637255.jpg");
+
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      #container {
+        width: 100%;
+        /* height: 700px; */
+        /* border: 1px solid black; */
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+        margin: 10px;
+      }
+      #Poster {
+        width: 300px;
+        height: 400px;
+      }
+      #text {
+        border: 0;
+        margin: 5px;
+        color:gold;
+        padding: 0;
+        font-family: "roboto", sans-serif;
+        font-weight: 500;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="color:gold;margin: 10px 0px 10px 30px;">TRENDING MOVIES</h1>
+    <div id="container"></div>
+  </body>
+</html>
+<script>
+  async function searchMovies() {
+    try {
+      // let movie=document.getElementById("input").value;
+      let res = await fetch(
+        `https://api.themoviedb.org/3/trending/all/day?api_key=d00c59b04db3c549f156906d9c40cbe2`
+      );
+      let data = await res.json();
+
+      //    console.log(data)
+      showData(data.results);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  searchMovies();
+
+  let card = document.getElementById("container");
+
+  function showData(data) {
+    console.log(data);
+    data.map(function (ele) {
+      card.innerHTML += ` <div id="list">
+       <img id="Poster" src="https://www.themoviedb.org/t/p/w780/${ele.poster_path}" alt="">
+       <p id="text">Title:- ${ele.original_title}</p>
+       <p  id="text" >Release Date:- ${ele.release_date}</p>
+       <p  id="text">Rating:- ${ele.vote_average}</p>
+       <p  id="text">About:- ${ele.overview}</p>
+
+      </div>`;
+    });
+  }
+</script>

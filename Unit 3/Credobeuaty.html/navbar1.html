@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+ /* contactbox  start */
+
+ #maincontactbox{
+            border: 1px solid black;
+            width: 100%;
+            height: 470px;
+            background-color:   #19254b;
+            margin-top: 70px;
+        }
+
+        #contactbox{
+           
+            display: flex;
+        }
+        
+        #contactbox>div>table{
+            margin-top: 50px;
+            margin-left: 120px;
+            color: white;
+            
+            font-family: 'Romanesco', cursive ;
+        }
+        #tinput{
+            border: none;
+            border-bottom: 2px solid white;
+           background-color: #19254b;
+           color: white;
+        }
+        #socialicon{
+            display:flex;
+            justify-content: space-between;
+            margin-left:120px ;
+            width: 190px;
+            margin-top: 10px;
+        }
+        #socialicon>div>i{
+            color: white;
+            font-size: x-large;
+        }
+        
+        #contactelogo{
+            display: flex;
+            margin-top: 15px;
+            margin-left: 170px;
+        }
+        #contactelogoimg1{
+         height: 100px;
+         width: 100px;
+        }
+        #contactelogoimg2{
+          height: 90px;
+          width: 90px;
+          margin-left: 20px;
+        }
+        #contacttextbox{
+          
+          
+           margin-left: 60px;
+           margin-top: 25px;
+           display: grid;
+           grid-template-columns: repeat(3,1fr);
+           
+           grid-gap: 20px;
+          
+        }
+        #contacttextbox>div{
+           
+            text-align: justify;
+            color: white;
+        }
+        #contacttextbox>div>h4{
+            cursor: pointer;
+            margin: 10px;
+            font-weight: lighter;
+            font-family: 'Roboto', sans-serif;
+        }
+        #contacttextbox>div>h3{
+            font-weight: lighter;
+        }
+        #payementcardicon{
+            /* border: 1px solid green; */
+            width: 600px;
+            margin-left: 550px;
+        }
+        #payementoptions{
+            /* border: 1px solid black; */
+            width: 200px;
+            color: rgb(219, 210, 210);
+          justify-content: space-evenly;
+            display: flex;
+        }
+        #atag1{
+            font-weight: lighter;
+            color: steelblue;
+            border: 0px;
+        }
+    </style>
+</head>
+<body>
+     <div id="maincontactbox">
+ 
+     <div id="contactbox">
+             <div>
+                 <table>
+                     <thead>
+                         <tr>
+                             <th style="font-weight: lighter;">Your Daily Dose of Beauty:</th>
+                             <th><input  id="tinput" type="email" placeholder="Enter your email address...>"></th>
+                         </tr>
+                     </thead>
+                 </table>
+                 <div id="socialicon">
+                     <div>
+                        <i class="fab fa-instagram"></i>
+                     </div>
+                     <div><i class="fab fa-facebook-f"></i></div>
+                     <div><i class="fab fa-twitter"></i></div>
+                     <div><i class="fab fa-youtube"></i></div>
+ 
+                 </div>
+                 <div id="contactelogo">
+                     <div>
+                         <img id="contactelogoimg1" src="https://cdn.shopify.com/s/files/1/0637/6147/files/Credo_Logo_White_web_1_120x.png?v=1636718851" alt="logo">
+                     </div>
+                     <div>
+                         <img id="contactelogoimg2"  src="https://cdn.shopify.com/s/files/1/0637/6147/files/Badge-reviewedby-black_271a3720-5df8-4118-a01b-d4d85bf20b7f_120x.png?v=1636718743" alt="logo">
+                     </div>
+                 </div>
+             </div>
+ 
+             <div id="contacttextbox">
+                 <div>
+                      <h3>ABOUT US</h3>
+                     <h4>Why Credo</h4>
+                     <h4>The Dirty List</h4>
+                     <h4>Credo For Change</h4>
+                     <h4>Cruelty Free</h4>
+                     <h4>Find a Store</h4>
+                     <h4>Blog </h4>
+                     <h4>Careers</h4>
+                      
+                 </div>
+                 <div>
+                     <h3>RESOURCES</h3>
+                     <h4>My Account</h4>
+                     <h4>You Product Finder</h4>
+                     <h4>Refer a Freind</h4>
+                     <h4>StudentBeans</h4>
+                     <h4>Accessibility</h4>
+                     <h4>Terms of Use</h4>
+                     <h4>Privacy Policy</h4>
+                 </div>
+                 <div>
+                     <h3>CONTACT US</h3>
+                     <h4>Credo Live (Chat with us)</h4>
+                     <h4>FAQs</h4>
+                     <h4>arealperson@credobeauty.com</h4>
+                     <h4>1-844-692-7336</h4>
+                 </div>
+                
+         </div>
+         
+            
+     </div>
+     <div id="payementcardicon">
+         <div>
+             <h4 style="color: white;margin: 5px; font-family: 'Roboto', sans-serif; font-weight: lighter;">A portion of
+                 every purchase made on <a  id="atag1"href="">Credo beauty</a>
+                 is donated to <a id="atag1" href=""> Lipistick angle</a>.</h4>
+         </div>
+         <div id="payementoptions">
+             <i class="fab fa-usps"></i>
+             <i class="fab fa-usps"></i>
+             <i class="fab fa-cc-discover"></i>
+             <i class="fab fa-paypal"></i>
+             <i class="fab fa-vimeo"></i>
+             <i class="fab fa-cc-visa"></i>
+ 
+ 
+         </div>
+ 
+     </div>
+ 
+ </div>
+</body>
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>women</title>
+    <style>
+        /* ------------------------------ */
+        .nav{
+            display: flex;
+            background-color: blue;
+            justify-content: space-between;
+            height: 50px;
+        }
+        .left{
+            color: orange;
+            width: 63%;
+            font-family: sans-serif;
+            font-size: 26px;
+            padding: 10px;
+        }
+        .right{
+            color: orange;
+            display: flex;
+            justify-content: space-evenly;
+            width: 38%;
+        }
+        .right>div{
+            font-family: sans-serif;
+            font-size: 18px;
+            padding: 14px;
+        }
+        .right>div:hover{
+            background-color: white;
+            color: blue;
+            font-size: larger;
+            cursor: pointer;
+        }
+        /* ------------------------- */
+         #container{
+            width: 80%;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            grid-gap: 20px;
+        }
+        #container>div{
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+        }
+        #container>div h3{
+            margin-left: 10px;
+            font-family: sans-serif;
+        }
+        #price_box{
+            display: flex;
+            justify-content: space-between;
+            padding: 0 10px;
+        }
+        #price_box p:nth-child(1){
+            font-family: sans-serif;
+        }
+        #price_box p:nth-child(2){
+            font-family: sans-serif;
+            text-decoration: line-through;
+        }
+        button{
+            border: 0px;
+            background-color: cyan;
+            color: white;
+            line-height: 40px;
+            font-family: sans-serif;
+            font-size: larger;
+            margin: 0px 0px 10px 10px;
+            border-radius: 10px;
+            box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <div class="left">Meesho</div>
+        <div class="right">
+            <div id="sign">signup</div>
+            <div onclick="window.location.href='login.html' ">login</div>
+            <div id="men">men</div>
+            <div id="women">women</div>
+            <div id="about">About</div>
+        </div>
+    </div>
+    <h1>women page</h1>
+    <button onclick="window.location.href='card.html'">go to card</button>
+    <select id="select" onchange="sort()">
+        <option value=""> sort by price</option>
+        <option value="high"> high to low</option>
+        <option value="low">low to high</option>
+    </select>
+
+    <select id="select_brand" onchange="brand_filter()">
+        <option value=""> filter by brand</option>
+        <option value="reebok">reebok</option>
+        <option value="campus">campus</option>
+    </select>
+    
+    <div id="container">
+
+    </div>
+</body>
+</html>
+<script>
+
+    // ------------------------------------
+
+    document.querySelector("#sign").addEventListener("click",move_signup);
+    function move_signup(){
+        window.location.href="signup.html";
+    }
+
+
+    document.querySelector("#men").addEventListener("click",move_men);
+    function move_men(){
+        window.location.href="men.html";
+    }
+
+    document.querySelector("#women").addEventListener("click",move_women);
+    function move_women(){
+        window.location.href="women.html";
+    }
+
+    document.querySelector("#about").addEventListener( "click", function(){
+        window.location.href="about.html";
+    });
+
+    // -------------------------------------
+    var womens_data = JSON.parse(localStorage.getItem("women_data"))  || [];
+
+    var arr_card = JSON.parse(localStorage.getItem("card_data")) || [];
+
+    display(womens_data);
+
+    function display(womens_data){
+
+        document.querySelector("#container").textContent="";
+        
+        womens_data.map(function (data){
+
+            var item_div = document.createElement("div");
+            item_div.setAttribute("id","item_div");
+
+            var image = document.createElement("img");
+            image.setAttribute("src", data.image_url);
+
+            var name = document.createElement("h3");
+            name.textContent = data.name;
+
+            var price_box = document.createElement("div");
+            price_box.setAttribute("id","price_box");
+
+
+            var price = document.createElement("p");
+            price.textContent = data.price;
+
+            var strk_price = document.createElement("p");
+            strk_price.textContent = data.strikedoffprice;
+
+            price_box.append(price, strk_price)
+
+            var add_btn = document.createElement("button");
+            add_btn.textContent = "Add To Card";
+            add_btn.addEventListener("click",function(){
+                addto_card(data);
+            })
+
+            item_div.append(image, name, price_box, add_btn);
+            document.querySelector("#container").append(item_div);
+
+        });
+    }
+
+    function sort(){
+        var select_value = document.querySelector("#select").value;
+
+        if(select_value == "high"){
+            womens_data.sort(function (a,b){
+           return  Number(b.price) - Number(a.price);
+            })
+        }
+        if(select_value == "low"){
+            womens_data.sort(function (a,b){
+            return Number(a.price) - Number(b.price);
+            })
+        }
+        display(womens_data);
+    }
+
+    function brand_filter(){
+        var brand_name = document.querySelector("#select_brand").value;
+
+       var filter_list = womens_data.filter(function (item){
+           return item.brand == brand_name; 
+       })
+    display(filter_list);
+    }
+
+    function addto_card(data){
+        arr_card.push(data);
+        localStorage.setItem("card_data",JSON.stringify(arr_card));
+        alert("item added");
+    }
+
+</script>
